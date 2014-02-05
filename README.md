@@ -39,11 +39,11 @@ Furthermore, we could also provide a negative cases.
 
 We don't care how that fizzbuzz method works, or even that it's defined, we are just stating our expectations. And we're doing that first. When coding, it's important to have a target to shoot for, by writing your test first, by stating your expectations of your code first, you know what your goal is, and you get to use your entire brain to think about just your goals, not how you'll get there, which adds clarity and focus to the problem.
 
-    "The competent programmer is fully aware of the strictly limited size of his own skull; therefore he approaches the programming task in full humility" Edsger W. Dijkstra
+    >"The competent programmer is fully aware of the strictly limited size of his own skull; therefore he approaches the programming task in full humility" Edsger W. Dijkstra
 
 Test Driven Development allows us to fully utilize our mental capacity to clearly state the problem we're solving and then to 100% focus on implementing a solution. When you are just coding, you're actually focusing on stating the problem and the solution at the same time. You are thereby splitting your thinking in two, making you less effective at both. 
 
-    "It's the exact same reason you make a todo list. Also testing is not for present you, it's for future you." Joe M Burgess
+    >"It's the exact same reason you make a todo list. Also testing is not for present you, it's for future you." Joe M Burgess
 
 # Introduction to RSpec
 
