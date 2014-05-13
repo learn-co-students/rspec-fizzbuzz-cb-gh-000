@@ -3,6 +3,7 @@ languages: ruby
 tags: rspec, intro
 week: 1  
 prereqs: methods, basic logic
+  resources: 3
 ---
 
 # A Note on This Guide
@@ -500,3 +501,8 @@ You can try code in IRB and then copy it to your program files as you get it wor
 
 Good luck!
 
+
+## Resources
+* [The RSpec Book](http://books.flatironschool.com/books/20) - [2.2 Hello RSpec](http://books.flatironschool.com/books/20), page 31
+* [Learn to Program](http://books.flatironschool.com/books/43) - [Chapter 2 Numbers](http://books.flatironschool.com/books/43), page 23
+* [Learn to Program](http://books.flatironschool.com/books/43) - [Chapter 7 Flow Control](http://books.flatironschool.com/books/43), page 49
