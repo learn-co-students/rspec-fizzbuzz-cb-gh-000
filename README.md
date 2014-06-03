@@ -503,6 +503,6 @@ Good luck!
 
 
 ## Resources
-* [The RSpec Book](http://books.flatironschool.com/books/20) - [2.2 Hello RSpec](http://books.flatironschool.com/books/20), page 31
-* [Learn to Program](http://books.flatironschool.com/books/43) - [Chapter 2 Numbers](http://books.flatironschool.com/books/43), page 23
-* [Learn to Program](http://books.flatironschool.com/books/43) - [Chapter 7 Flow Control](http://books.flatironschool.com/books/43), page 49
+* [The RSpec Book](http://books.flatironschool.com/books/20?page=31) - [2.2 Hello RSpec](http://books.flatironschool.com/books/20?page=31), page 31
+* [Learn to Program](http://books.flatironschool.com/books/43?page=23) - [Chapter 2 Numbers](http://books.flatironschool.com/books/43?page=23), page 23
+* [Learn to Program](http://books.flatironschool.com/books/43?page=49) - [Chapter 7 Flow Control](http://books.flatironschool.com/books/43?page=49), page 49
