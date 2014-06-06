@@ -1,8 +1,6 @@
 ---
+ tags: rspec, tdd
  languages: ruby
- tags: rspec, intro
- week: 1  
- prereqs: methods, basic logic
  resources: 3
 ---
 
