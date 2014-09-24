@@ -1,3 +1,1 @@
-def fizzbuzz
-  # code goes here
-end
+# code goes here
