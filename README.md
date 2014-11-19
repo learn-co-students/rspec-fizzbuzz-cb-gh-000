@@ -1,8 +1,6 @@
 ---
-languages: ruby
 tags: rspec, intro
-week: 1
-prereqs: methods, basic logic
+languages: ruby
 ---
 
 # A Note on This Guide
