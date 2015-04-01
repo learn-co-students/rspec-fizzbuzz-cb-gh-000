@@ -136,7 +136,7 @@ That is to say, when we evoke  `fizzbuzz(3)`, it should equal `"Fizz"`. Taking a
 fizz_3 = fizzbuzz(3)
 
 # Next, our expectation that the value of fizz_3 should be "Fizz"
-expect(fizz_3).to eq(3)
+expect(fizz_3).to eq("Fizz")
 ```
 
 So three new RSpec methods, `expect`, `to`, and `eq`. 
