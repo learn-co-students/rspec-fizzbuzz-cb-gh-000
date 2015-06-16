@@ -11,7 +11,7 @@ This guide is intended for beginners new to programming, ruby, and test driven d
 
 # RSpec - Test Driven Development
 
-RSpec is testing tool for the Ruby programming language. Born under the banner of Behavior-Driven Development, it is designed to make Test-Driven Development a productive and enjoyable experience. The `learn` gem wraps `rspec` with additional functionality, so if you've been using `learn`, you've been using `rspec`.
+RSpec is a testing tool for the Ruby programming language. Born under the banner of Behavior-Driven Development, it is designed to make Test-Driven Development a productive and enjoyable experience. The `learn` gem wraps `rspec` with additional functionality, so if you've been using `learn`, you've been using `rspec`.
 
 # What is Test Driven Development?
 
@@ -37,7 +37,7 @@ Furthermore, we could also provide a negative case.
 
 4. We expect fizzbuzz(4) to return nil or nothing or ""
 
-We don't care how that fizzbuzz method works, or even that it's defined, we are just stating our expectations. And we're doing that first. When coding, it's important to have a target to shoot for, by writing your test first, by stating your expectations of your code first, you know what your goal is, and you get to use your entire brain to think about just your goals, not how you'll get there, which adds clarity and focus to the problem.
+We don't care how that fizzbuzz method works, or even that it's defined, we are just stating our expectations. And we're doing that first. When coding, it's important to have a target to shoot for; by writing your test first, by stating your expectations of your code first, you know your goal. You get to use your entire brain to think about just your goals, not how you'll get there, which adds clarity and focus to the problem.
 
 > The competent programmer is fully aware of the strictly limited size of his own skull; therefore he approaches the programming task in full humility.
 >
