@@ -43,7 +43,7 @@ We don't care how that fizzbuzz method works, or even that it's defined, we are 
 >
 > — <cite>Edsger W. Dijkstra</cite>
 
-Test-Driven Development allows us to fully utilize our mental capacity to clearly state the problem we're solving and then to 100% focus on implementing a solution. When you are just coding, you're actually focusing on stating the problem and the solution at the same time. You are thereby splitting your thinking in two, making you less effective at both. 
+Test-Driven Development allows us to fully utilize our mental capacity to clearly state the problem we're solving and then to 100% focus on implementing a solution. When you are just coding, you're actually focusing on stating the problem and the solution at the same time. You are thereby splitting your thinking in two, making you less effective at both.
 
 > It's the exact same reason you make a todo list. Also testing is not for present you, it's for future you.
 >
@@ -88,15 +88,15 @@ A block is a simple unit of code that starts with the `do` keyword and ends with
 Resources on Blocks:
 
 - [Why's Guide to Blocks](http://mislav.uniqpath.com/poignant-guide/book/chapter-3.html)
-- [Understanding Ruby Blocks, Procs, and Lamdbas](http://www.reactive.io/tips/2008/12/21/understanding-ruby-blocks-procs-and-lambdas/) 
-- [CodeAcademy on Blocks](http://www.codecademy.com/courses/ruby-beginner-en-L3ZCI/0/1?curriculum_id=5059f8619189a5000201fbcb) 
-- [RubyMonk on Blocks](http://rubymonk.com/learning/books/1-ruby-primer/chapters/34-lambdas-and-blocks-in-ruby/lessons/78-blocks-in-ruby) 
+- [Understanding Ruby Blocks, Procs, and Lamdbas](http://www.reactive.io/tips/2008/12/21/understanding-ruby-blocks-procs-and-lambdas/)
+- [CodeAcademy on Blocks](http://www.codecademy.com/courses/ruby-beginner-en-L3ZCI/0/1?curriculum_id=5059f8619189a5000201fbcb)
+- [RubyMonk on Blocks](http://rubymonk.com/learning/books/1-ruby-primer/chapters/34-lambdas-and-blocks-in-ruby/lessons/78-blocks-in-ruby)
 
 ## `it`
 
 Now that we've created a structure to group our tests together using the `describe` method, we can move onto actually describing the desired functionality. Every specification in RSpec begins with the `it` method.
 
-The `it` method, like the `describe` method, accepts an arbitrary string as an argument, namely, some text that says what we're currently interested in testing. Like all things in code, every `it` should be specifying one, only one, and exactly one, desired outcome or behavior. 
+The `it` method, like the `describe` method, accepts an arbitrary string as an argument, namely, some text that says what we're currently interested in testing. Like all things in code, every `it` should be specifying one, only one, and exactly one, desired outcome or behavior.
 
 Above we said that one functionality of `fizzbuzz` is that it returns "Fizz" if the number is divisible by 3. So we can simply write that. It's totally up to you, the programmer, to decide the phrasing for your `it` specification, but a good starting point is a verb or action. `it returns` or `it prints` or `it emails` or `it validates` etc.
 
@@ -139,12 +139,12 @@ fizz_3 = fizzbuzz(3)
 expect(fizz_3).to eq("Fizz")
 ```
 
-So three new RSpec methods, `expect`, `to`, and `eq`. 
+So three new RSpec methods, `expect`, `to`, and `eq`.
 
 `expect()` is a method the accepts our unknown value or variable, the thing we're testing. So for instance, in a simple math equation, imagine the following:
 
 ```ruby
-x = 1 + 1 
+x = 1 + 1
 expect(x)
 ```
 
@@ -153,18 +153,18 @@ Since `x` is the unknown variable, we'd be testing the expectation of the value 
 In addition to the `expect(x)` call, we need to communicate what we expect `x` to be equal to. We do this in a weird way, we chain a `to()` method to the `expect()`, so it simply looks like:
 
 ```ruby
-x = 1 + 1 
+x = 1 + 1
 expect(x).to
 ```
 
 Then finally we use what is known as a matcher, `eq`, to specify our expectation: that we expect the result of our expectation, passed to the `expect` method, to equal, `to` `eq`, 2.
 
 ```ruby
-x = 1 + 1 
+x = 1 + 1
 expect(x).to eq(2)
 ```
 
-You won't have to write your own tests for a while, so don't worry about mastering the `expect`, `to`, and `eq` usage. The important part is that you can read the DSL and understand what it is trying to suggest. 
+You won't have to write your own tests for a while, so don't worry about mastering the `expect`, `to`, and `eq` usage. The important part is that you can read the DSL and understand what it is trying to suggest.
 
 ## A FizzBuzz Test Suite
 
@@ -211,7 +211,7 @@ Remember, your goal here is not to be able to write that test suite, yet. Your g
 
 ## Installing RSpec
 
-At this point, it's important to see how our RSpec test and our actual program go together. Note, we have not actually written our program or any useful code yet.  Rather, we've only written code that will confirm that when we *do* write our code, it works correctly. Isn't programming amazing? 
+At this point, it's important to see how our RSpec test and our actual program go together. Note, we have not actually written our program or any useful code yet.  Rather, we've only written code that will confirm that when we *do* write our code, it works correctly. Isn't programming amazing?
 
 First, let's see how to actually 'run' our test. RSpec is a ruby gem, or a prebuilt library that we can install into our system using the RubyGem package manager. Oddly enough, the Wikipedia article on [RubyGems](http://en.wikipedia.org/wiki/RubyGems) is a good beginner explanation of RubyGems.
 
@@ -269,52 +269,57 @@ Successfully installed rspec-2.14.1
 
 ## First `rspec` Run
 
-Now, from within the directory of this file, type the `rspec` command.
+Now, from within the directory of this file, type the `rspec` command. Your terminal should have an output that looks something like this:
 
-```
-rspec
+```ruby
 Run options: include {:focus=>true}
 
 All examples were filtered out; ignoring {:focus=>true}
-FFFF
+
+Randomized with seed 49309
+
+fizzbuzz
+  returns "Buzz" when the number is divisible by 5 (FAILED - 1)
+  returns "FizzBuzz" when the number is divisible by 3 and 5 (FAILED - 2)
+  returns nil when the number is not divisible by 3 or 5 (FAILED - 3)
+  returns "Fizz" when the number is divisible by 3 (FAILED - 4)
 
 Failures:
 
-  1) fizzbuzz returns "Fizz" when the number is divisible by 3
-     Failure/Error: fizz_3 = fizzbuzz(3)
+  1) fizzbuzz returns "Buzz" when the number is divisible by 5
+     Failure/Error: fizz_5 = fizzbuzz(5)
      NoMethodError:
-       undefined method `fizzbuzz' for #<RSpec::Core::ExampleGroup::Nested_1:0x007fbdd2230428>
-     # ./spec/fizzbuzz_spec.rb:5:in `block (2 levels) in <top (required)>'
+       undefined method `fizzbuzz' for #<RSpec::ExampleGroups::Fizzbuzz:0x007fb0645b1f00>
+     # ./spec/fizzbuzz_spec.rb:10:in `block (2 levels) in <top (required)>'
 
   2) fizzbuzz returns "FizzBuzz" when the number is divisible by 3 and 5
      Failure/Error: fizz_15 = fizzbuzz(15)
      NoMethodError:
-       undefined method `fizzbuzz' for #<RSpec::Core::ExampleGroup::Nested_1:0x007fbdd21fb3b8>
+       undefined method `fizzbuzz' for #<RSpec::ExampleGroups::Fizzbuzz:0x007fb0645b1168>
      # ./spec/fizzbuzz_spec.rb:15:in `block (2 levels) in <top (required)>'
 
-  3) fizzbuzz returns "Buzz" when the number is divisible by 5
-     Failure/Error: fizz_5 = fizzbuzz(5)
-     NoMethodError:
-       undefined method `fizzbuzz' for #<RSpec::Core::ExampleGroup::Nested_1:0x007fbdd21fa198>
-     # ./spec/fizzbuzz_spec.rb:10:in `block (2 levels) in <top (required)>'
-
-  4) fizzbuzz returns nil when the number is not divisible by 3 or 5
+  3) fizzbuzz returns nil when the number is not divisible by 3 or 5
      Failure/Error: fizz_4 = fizzbuzz(4)
      NoMethodError:
-       undefined method `fizzbuzz' for #<RSpec::Core::ExampleGroup::Nested_1:0x007fbdd21f8b40>
+       undefined method `fizzbuzz' for #<RSpec::ExampleGroups::Fizzbuzz:0x007fb0645b03f8>
      # ./spec/fizzbuzz_spec.rb:20:in `block (2 levels) in <top (required)>'
 
-Finished in 0.00092 seconds
+  4) fizzbuzz returns "Fizz" when the number is divisible by 3
+     Failure/Error: fizz_3 = fizzbuzz(3)
+     NoMethodError:
+       undefined method `fizzbuzz' for #<RSpec::ExampleGroups::Fizzbuzz:0x007fb0645ab650>
+     # ./spec/fizzbuzz_spec.rb:5:in `block (2 levels) in <top (required)>'
+
+Finished in 0.00121 seconds (files took 0.23681 seconds to load)
 4 examples, 4 failures
 
 Failed examples:
 
-rspec ./spec/fizzbuzz_spec.rb:4 # fizzbuzz returns "Fizz" when the number is divisible by 3
-rspec ./spec/fizzbuzz_spec.rb:14 # fizzbuzz returns "FizzBuzz" when the number is divisible by 3 and 5
 rspec ./spec/fizzbuzz_spec.rb:9 # fizzbuzz returns "Buzz" when the number is divisible by 5
+rspec ./spec/fizzbuzz_spec.rb:14 # fizzbuzz returns "FizzBuzz" when the number is divisible by 3 and 5
 rspec ./spec/fizzbuzz_spec.rb:19 # fizzbuzz returns nil when the number is not divisible by 3 or 5
+rspec ./spec/fizzbuzz_spec.rb:4 # fizzbuzz returns "Fizz" when the number is divisible by 3
 
-Randomized with seed 5912
 ```
 
 When we installed the RSpec gem, it gave us a new command, `rspec`. When you run the `rspec` command, you are running your test suite — not your program, remember. We haven't even written our fizzbuzz program yet). So how does that work?
@@ -387,7 +392,7 @@ It is finally time to actually program a solution to fizzbuzz. The first questio
 
 ```
 rspec-fizzbuz/
-    spec/  
+    spec/
         fizzbuzz_spec.rb
         spec_helper.rb
     README.md
@@ -433,7 +438,7 @@ From within `rspec-fizzbuzz` fire up `irb`, the Interactive Ruby Shell, a REPL, 
 ```
 $ irb
 2.0.0-p247 :001 > 1+1
- => 2 
+ => 2
 2.0.0-p247 :002 >
 ```
 
