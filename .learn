@@ -1,9 +1,8 @@
 tags:
   - rspec
   - intro
+  - tdd
+  - conditional statements
+  - flow control
 languages:
   - ruby
-week: 1
-prereqs:
-  - methods
-  - basic logic

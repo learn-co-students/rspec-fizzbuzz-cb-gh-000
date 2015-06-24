@@ -1,13 +1,10 @@
----
-tags: rspec, intro
-languages: ruby
-week: 1
-prereqs: methods, basic logic
----
-
 # A Note on This Guide
 
-This guide is intended for beginners new to programming, ruby, and test driven development. Given that test driven development and RSpec are VERY ADVANCED techniques, this guide is not trying to have you master or understand everything. You have to be willing to take things for granted, pay attention to the details, trust the author, follow instructions, pay attention to the details, and you'll be fine. Learn as much as possible, revisit this lab in the future and so much more will make sense.
+We've been introduced to the concept of test driven development and reading and understanding RSpec tests before. You've been reading these tests for a while now, but TDD is a big topic and we're going to take a cloer look at it here. 
+
+You're still not being asked to write your own tests. We're simply aiming to understand the purpose of tests and understand how to read RSpec tests better. 
+
+You can review the earlier lesson on TDD and RSpec testing [here](https://learn.co/tracks/web-development-with-ruby-on-rails/ruby/variables-and-methods/tdd-rspec-and-learn).
 
 # RSpec - Test Driven Development
 
@@ -27,7 +24,7 @@ The goal of fizzbuzz is to build a program that can take a number and if the num
 
 Let's approach solving this problem from a TDD approach. That means what we don't care about is "how", but rather, we care about "what". What will the program do if it works correctly, not how will it do it. We are going to write our expectations first, then our implementation.
 
-Before we look at the RSpec syntax, let's just express our tests naturally.
+Before we look at the RSpec syntax, let's just express our tests in plain English (also sometimes referred to as "psuedo-code").
 
 1. We expect fizzbuzz(3) to return "Fizz"
 2. We expect fizzbuzz(5) to return "Buzz"
@@ -37,7 +34,7 @@ Furthermore, we could also provide a negative case.
 
 4. We expect fizzbuzz(4) to return nil or nothing or ""
 
-We don't care how that fizzbuzz method works, or even that it's defined, we are just stating our expectations. And we're doing that first. When coding, it's important to have a target to shoot for; by writing your test first, by stating your expectations of your code first, you know your goal. You get to use your entire brain to think about just your goals, not how you'll get there, which adds clarity and focus to the problem.
+We don't care how that fizzbuzz method works, or even that it's defined, *we are just stating our expectations*. And we're doing that first. When coding, it's important to have a target to shoot for; by writing your test first, by stating your expectations of your code first, you know your goal. You get to use your entire brain to think about just your goals, not how you'll get there, which adds clarity and focus to the problem.
 
 > The competent programmer is fully aware of the strictly limited size of his own skull; therefore he approaches the programming task in full humility.
 >
@@ -168,6 +165,8 @@ You won't have to write your own tests for a while, so don't worry about masteri
 
 ## A FizzBuzz Test Suite
 
+**First, fork and clone this lab and open it on your machine. Read the remainder of this tutorial and follow along by executing certain commands and writing certain code in this lab on your computer.**
+
 So the entire FizzBuzz test looks like (this file is located in `spec/fizzbuzz_spec.rb`:
 
 File: `spec/fizzbuzz_spec.rb`
@@ -211,9 +210,9 @@ Remember, your goal here is not to be able to write that test suite, yet. Your g
 
 ## Installing RSpec
 
-At this point, it's important to see how our RSpec test and our actual program go together. Note, we have not actually written our program or any useful code yet.  Rather, we've only written code that will confirm that when we *do* write our code, it works correctly. Isn't programming amazing?
+Note that, so far, we have not actually written our program. Rather, we've only written code that will confirm that when we *do* write our code, it works correctly. Isn't programming amazing?
 
-First, let's see how to actually 'run' our test. RSpec is a ruby gem, or a prebuilt library that we can install into our system using the RubyGem package manager. Oddly enough, the Wikipedia article on [RubyGems](http://en.wikipedia.org/wiki/RubyGems) is a good beginner explanation of RubyGems.
+First, let's see how to actually 'run' our test. This is something you've been doing all along. We're just going to take a look at it here. RSpec is a ruby gem, or a prebuilt library that we can install into our system using the RubyGem package manager. Oddly enough, the Wikipedia article on [RubyGems](http://en.wikipedia.org/wiki/RubyGems) is a good beginner explanation of RubyGems.
 
 If you have Ruby installed you should already have ruby gems installed. Type into your Shell (Terminal, Bash, Command Line):
 
@@ -257,7 +256,7 @@ Output that looks like this is not good:
 
 If you see that, you need to reinstall Ruby. You can use the [Learn OSX App](https://flatironschool-static.s3.amazonaws.com/learn.dmg) to automate your setup, read a summary of the [Learn Ruby Setup](https://github.com/learn-co-curriculum/ruby-environment-setup-summary) or [Setup Your System for Learn Manually](https://github.com/learn-co-curriculum/learn-environment-setup)
 
-Install RSpec by typing `gem install rspec` into your terminal (bash, shell, command prompt - all words for the same thing). You should see something like:
+You should have done so already, but if you don't have RSpec on your machine, you can install it by typing `gem install rspec` into your terminal (bash, shell, command prompt - all words for the same thing). You should see something like:
 
 (The $ prompt is a general way to indicate that a command was entered into the shell. It is not literal; do not copy it.)
 
@@ -266,6 +265,15 @@ $ gem install rspec
 Successfully installed rspec-2.14.1
 1 gem installed
 ```
+
+Learn is also a Ruby gem. It is built using RSpec and is essentially RSpec will some added (awesome) functionality. If you don't have Learn installed on your machine, install it with 
+
+```ruby 
+$ gem install learn
+```
+
+Usually, you'll run your tests by typing the `learn` command into your terminal. For the purposes of this lab, we'll run our tests by typing `rspec`. In the real world (i.e. outside of Learn.co's curriculum), you'll use `rspec` to run tests. 
+
 
 ## First `rspec` Run
 
@@ -395,16 +403,19 @@ rspec-fizzbuz/
     spec/
         fizzbuzz_spec.rb
         spec_helper.rb
-    README.md
+    .learn
+    .rspec
+    fizzbuzz.rb
+    README.md  
 ```
 
 The `spec` directory is for our tests. There's a more advanced folder structure to separate the different kinds of tests you might encounter: unit, acceptance, etc. For now, while our scripts are simple, we'll basically write one spec for each lab.
 
 We're not going to put the heart of our application in the spec folder, that doesn't make sense, we want to keep our code organized so developers can easily guess the context or part of the system a file corresponds to. It's a measure of symmetry to our code, tests go in the tests directory.
 
-In a larger program, I would put my code in a `lib` directory. In this example, I'd drop `fizzbuzz.rb` in the root directory, right alongside this README.
+In a larger program, I would put my code in a `lib` directory. In this example, `fizzbuzz.rb` is in the root directory, right alongside this README.
 
-Create a file, `fizzbuzz.rb` and save it right near this README. You can do that easily from your shell with the `touch` command, try `touch fizzbuzz.rb` In this file, we're going to code the core of our program, a simple method, `fizzbuzz` that when evoked in the tests above, will behave as we specified. For now though, let's just fix our first error.
+`fizzbuzz.rb` is where we're going to code the core of our program––a simple method, `fizzbuzz` that when evoked in the tests above, will behave as we specified. For now though, let's just fix our first error.
 
 The error we were dealing with is that there is no method known as `fizzbuzz`. Let's simply define that method.
 
@@ -507,6 +518,6 @@ fizzbuzz(5) # => You should see a return of nil
 fizzbuzz()  # => You should get an argument error
 ```
 
-You can try code in IRB and then copy it to your program files as you get it working. You can also load your program into IRB via `require './fizzbuzz.rb'` and then call the code defined in there.
+**Helpful Tip:** You can try code in IRB and then copy it to your program files as you get it working. You can also use Pry by placing the line `require 'pry'` at the top of your `fizzbuzz.rb` and placing `binding.pry` inside the method before running RSpec. 
 
 Good luck!
