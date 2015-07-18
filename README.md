@@ -1,3 +1,9 @@
+## Objectives
+
+1. Build methods that utilize flow control
+2. Read and understand test output to develop a working program
+3. Gain more familiarity with the concept of test driven development
+
 # A Note on This Guide
 
 We've been introduced to the concept of test driven development and reading and understanding RSpec tests before. You've been reading these tests for a while now, but TDD is a big topic and we're going to take a cloer look at it here. 
