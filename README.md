@@ -6,7 +6,7 @@
 
 # A Note on This Guide
 
-We've been introduced to the concept of test driven development and reading and understanding RSpec tests before. You've been reading these tests for a while now, but TDD is a big topic and we're going to take a cloer look at it here. 
+We've been introduced to the concept of test driven development and reading and understanding RSpec tests before. You've been reading these tests for a while now, but TDD is a big topic and we're going to take a closer look at it here. 
 
 You're still not being asked to write your own tests. We're simply aiming to understand the purpose of tests and understand how to read RSpec tests better. 
 
@@ -40,7 +40,7 @@ Furthermore, we could also provide a negative case.
 
 4. We expect fizzbuzz(4) to return nil or nothing or ""
 
-We don't care how that fizzbuzz method works, or even that it's defined, *we are just stating our expectations*. And we're doing that first. When coding, it's important to have a target to shoot for; by writing your test first, by stating your expectations of your code first, you know your goal. You get to use your entire brain to think about just your goals, not how you'll get there, which adds clarity and focus to the problem.
+We don't care how that fizzbuzz method works, or even that it's defined, *we are just stating our expectations*. And we're doing that first. When coding, it's important to have a target to shoot for; by writing your test first and stating your expectations of your code, you know your goal. You get to use your entire brain to think about just your goals, not how you'll get there, which adds clarity and focus to the problem.
 
 > The competent programmer is fully aware of the strictly limited size of his own skull; therefore he approaches the programming task in full humility.
 >
@@ -86,7 +86,7 @@ end
 
 ### WTF is a block?
 
-A block is a simple unit of code that starts with the `do` keyword and ends with the `end` keyword. Blocks are a complex and wonderful part of the Ruby language and we don't need to focus on exactly what they are right now. It's best think of a block just as a word used to describe a certain chunk, or unit, of code (almost like a paragraph). You can generally tell that something is a block because it is indented and grouped together. The aesthetics, the very form of the code, like in a poem, suggest a structure. That's a block.
+A block is a simple unit of code that starts with the `do` keyword and ends with the `end` keyword. Blocks are a complex and wonderful part of the Ruby language and we don't need to focus on exactly what they are right now. It's best to think of a block just as a word used to describe a certain chunk, or unit, of code (almost like a paragraph). You can generally tell that something is a block because it is indented and grouped together. The aesthetics, the very form of the code, like in a poem, suggest a structure. That's a block.
 
 Resources on Blocks:
 
@@ -151,7 +151,7 @@ x = 1 + 1
 expect(x)
 ```
 
-Since `x` is the unknown variable, we'd be testing the expectation of the value of `x`, so we pass that value to the `expect` method. I can imagine it's weird to think of the variable `x` as an unknown value worth confirming. You're thinking, "It's obviously 2!", but the truth is, you're making the assumption that Ruby has a correct notion of arithmetic. As our programs become more complex and we use more variables, it's very important to constantly validate our assumptions with expectations and testing. Let's finish the example.
+Since `x` is the unknown variable, we'd be testing the expectation of the value of `x`, so we pass that value to the `expect` method. I can imagine it's weird to think of the variable `x` as an unknown value worth confirming. You're thinking, "it's obviously 2!", but the truth is, you're making the assumption that Ruby has a correct notion of arithmetic. As our programs become more complex and we use more variables, it's very important to constantly validate our assumptions with expectations and testing. Let's finish the example.
 
 In addition to the `expect(x)` call, we need to communicate what we expect `x` to be equal to. We do this in a weird way, we chain a `to()` method to the `expect()`, so it simply looks like:
 
@@ -336,7 +336,7 @@ rspec ./spec/fizzbuzz_spec.rb:4 # fizzbuzz returns "Fizz" when the number is div
 
 ```
 
-When we installed the RSpec gem, it gave us a new command, `rspec`. When you run the `rspec` command, you are running your test suite — not your program, remember. We haven't even written our fizzbuzz program yet). So how does that work?
+When we installed the RSpec gem, it gave us a new command, `rspec`. When you run the `rspec` command, you are running your test suite — not your program, remember. We haven't even written our fizzbuzz program yet. So how does that work?
 
 Well, when you type in `rspec`, in a nutshell, here is what happens.
 
@@ -366,7 +366,7 @@ FFFF
 
 The first two lines of output are descriptive, RSpec is simply telling us what we did.
 
-The line with `FFFF` is important. `F` stands for a failure. As the test suite runs, RSpec will spit out an `F` for every failed expectation (every `it` block). RSpec will spit out a `.` for every passing test. Right now, the entire test suite is failing, which makes sense. We haven't written any code! That's an important point, and I think [Steve Klabnik](http://www.steveklabnik.com/) said it best
+The line with `FFFF` is important. `F` stands for a failure. As the test suite runs, RSpec will spit out an `F` for every failed expectation (every `it` block). RSpec will spit out a `.` for every passing test. Right now, the entire test suite is failing, which makes sense. We haven't written any code! That's an important point, and I think [Steve Klabnik](http://www.steveklabnik.com/) said it best:
 
 > *Programming is a movement from a broken state to a working state. That means you spend the majority of your time with things being broken. Hell, if it worked, you'd be done programming.*
 
@@ -506,7 +506,7 @@ Run the test suite one more time with `rspec`, you should see failures in line w
      # ./spec/fizzbuzz_spec.rb:21:in `block (2 levels) in <top (required)>'
 ```
 
-Read that error message; it's brand new! Getting a new error message is a sign of progress. It's one more hint the computer is giving you, one more clue to drive your investigation forward. Now it's complaining that our tests are calling the `fizzbuzz` method with an argument however our definition of `fizzbuzz` accepts no arguments. You'll fix that, but it's important to realize our test suite is now all wired up and we can continue building out our `fizzbuzz` method and running our specs against that code until we have it working.
+Read that error message; it's brand new! Getting a new error message is a sign of progress. It's one more hint the computer is giving you, one more clue to drive your investigation forward. Now it's complaining that our tests are calling the `fizzbuzz` method with an argument; however, our definition of `fizzbuzz` accepts no arguments. You'll fix that, but it's important to realize our test suite is now all wired up and we can continue building out our `fizzbuzz` method and running our specs against that code until we have it working.
 
 ## Continuing to Solve Fizzbuzz
 
