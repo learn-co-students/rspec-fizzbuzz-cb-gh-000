@@ -275,7 +275,7 @@ Successfully installed rspec-2.14.1
 Learn is also a Ruby gem. It is built using RSpec and is essentially RSpec will some added (awesome) functionality. If you don't have Learn installed on your machine, install it with 
 
 ```ruby 
-$ gem install learn
+$ gem install learn-co
 ```
 
 Usually, you'll run your tests by typing the `learn` command into your terminal. For the purposes of this lab, we'll run our tests by typing `rspec`. In the real world (i.e. outside of Learn.co's curriculum), you'll use `rspec` to run tests. 
