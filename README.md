@@ -10,7 +10,6 @@ We've been introduced to the concept of test driven development and reading and 
 
 You're still not being asked to write your own tests. We're simply aiming to understand the purpose of tests and understand how to read RSpec tests better. 
 
-You can review the earlier lesson on TDD and RSpec testing [here](https://learn.co/tracks/web-development-with-ruby-on-rails/ruby/variables-and-methods/tdd-rspec-and-learn).
 
 # RSpec - Test Driven Development
 
