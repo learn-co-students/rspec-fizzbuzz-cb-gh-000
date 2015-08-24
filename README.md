@@ -71,7 +71,7 @@ Sure, that code looks crazy and it's actually quite advanced, but we don't need 
 
 ## `describe`
 
-The first thing RSpec allows you to do with its DSL is to define what it is you are describing. As in, are we writing a test that describes how our Billing System works or are we writing a test the describes how fizzbuzz works?
+The first thing RSpec allows you to do with its DSL is to define what it is you are describing. As in, are we writing a test that describes how our Billing System works or are we writing a test that describes how fizzbuzz works?
 
 RSpec gives us the `describe` method. The argument we pass to the `describe` method is arbitrary; it doesn't really do anything besides document what exactly it is we're testing. Since we're writing a specification (a test) for `fizzbuzz`, it makes sense to pass `describe` the string `"fizzbuzz"`. `describe` also accepts a block, which will be covered shortly, but for now, just know that a block in ruby starts with the `do` keyword. Every block that is opened must be closed. We use the `end` keyword to close the `describe` block.
 
