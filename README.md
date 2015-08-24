@@ -143,7 +143,7 @@ expect(fizz_3).to eq("Fizz")
 
 So three new RSpec methods, `expect`, `to`, and `eq`.
 
-`expect()` is a method the accepts our unknown value or variable, the thing we're testing. So for instance, in a simple math equation, imagine the following:
+`expect()` is a method that accepts our unknown value or variable, the thing we're testing. So for instance, in a simple math equation, imagine the following:
 
 ```ruby
 x = 1 + 1
