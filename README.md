@@ -10,7 +10,6 @@ We've been introduced to the concept of test driven development and reading and 
 
 You're still not being asked to write your own tests. We're simply aiming to understand the purpose of tests and understand how to read RSpec tests better. 
 
-You can review the earlier lesson on TDD and RSpec testing [here](https://learn.co/tracks/web-development-with-ruby-on-rails/ruby/variables-and-methods/tdd-rspec-and-learn).
 
 # RSpec - Test Driven Development
 
@@ -144,7 +143,7 @@ expect(fizz_3).to eq("Fizz")
 
 So three new RSpec methods, `expect`, `to`, and `eq`.
 
-`expect()` is a method the accepts our unknown value or variable, the thing we're testing. So for instance, in a simple math equation, imagine the following:
+`expect()` is a method that accepts our unknown value or variable, the thing we're testing. So for instance, in a simple math equation, imagine the following:
 
 ```ruby
 x = 1 + 1
