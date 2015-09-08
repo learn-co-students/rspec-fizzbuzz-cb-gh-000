@@ -271,7 +271,7 @@ Successfully installed rspec-2.14.1
 1 gem installed
 ```
 
-Learn is also a Ruby gem. It is built using RSpec and is essentially RSpec will some added (awesome) functionality. If you don't have Learn installed on your machine, install it with 
+Learn is also a Ruby gem. It is built using RSpec and is essentially RSpec with some added (awesome) functionality. If you don't have Learn installed on your machine, install it with 
 
 ```ruby 
 $ gem install learn-co
