@@ -6,10 +6,17 @@
 
 # A Note on This Guide
 
-We've been introduced to the concept of test driven development and reading and understanding RSpec tests before. You've been reading these tests for a while now, but TDD is a big topic and we're going to take a closer look at it here. 
+We've been introduced to the concept of test driven development and reading and understanding RSpec tests before.
 
-You're still not being asked to write your own tests. We're simply aiming to understand the purpose of tests and understand how to read RSpec tests better. 
+Everytime you run `learn` to run a lab's tests, you are running an RSpec test suite - that's how we build labs on Learn.
 
+You've been reading these tests for a while now, but TDD is a big topic and we're going to take a closer look at it here.
+
+You're still not being asked to write your own tests. We're simply aiming to understand the purpose of tests, a bit on the philosophy behind them and a bit more on how to read RSpec tests better.
+
+Remember, when we refer to RSpec or `rspec`, that is equivelent to a Learn test file in `spec` and running the `learn` or `learn test` command.
+
+You must have the `learn-co` gem installed. If you setup your environment through Learn and have used the `learn` command before (very likely if you've made it this far), you are totally fine. Run `learn` now to confirm. If you're having trouble or aren't sure, ask a question on Learn!
 
 # RSpec - Test Driven Development
 
@@ -213,84 +220,11 @@ Remember, your goal here is not to be able to write that test suite, yet. Your g
 
 # How to Run an RSpec Test Suite
 
-## Installing RSpec
+## First `rspec` Run via `learn`
 
-Note that, so far, we have not actually written our program. Rather, we've only written code that will confirm that when we *do* write our code, it works correctly. Isn't programming amazing?
-
-First, let's see how to actually 'run' our test. This is something you've been doing all along. We're just going to take a look at it here. RSpec is a ruby gem, or a prebuilt library that we can install into our system using the RubyGem package manager. Oddly enough, the Wikipedia article on [RubyGems](http://en.wikipedia.org/wiki/RubyGems) is a good beginner explanation of RubyGems.
-
-If you have Ruby installed you should already have ruby gems installed. Type into your Shell (Terminal, Bash, Command Line):
-
-```bash
-gem env
-```
-
-Output that looks at all like this is good:
-```
-RubyGems Environment:
-  - RUBYGEMS VERSION: 2.1.10
-  - RUBY VERSION: 2.0.0 (2013-06-27 patchlevel 247) [x86_64-darwin12.3.0]
-  - INSTALLATION DIRECTORY: /Users/avi/.rvm/gems/ruby-2.0.0-p247
-  - RUBY EXECUTABLE: /Users/avi/.rvm/rubies/ruby-2.0.0-p247/bin/ruby
-  - EXECUTABLE DIRECTORY: /Users/avi/.rvm/gems/ruby-2.0.0-p247/bin
-  - SPEC CACHE DIRECTORY: /Users/avi/.gem/specs
-  - RUBYGEMS PLATFORMS:
-    - ruby
-    - x86_64-darwin-12
-  - GEM PATHS:
-     - /Users/avi/.rvm/gems/ruby-2.0.0-p247
-     - /Users/avi/.rvm/gems/ruby-2.0.0-p247@global
-  - GEM CONFIGURATION:
-     - :update_sources => true
-     - :verbose => true
-     - :backtrace => false
-     - :bulk_threshold => 1000
-  - REMOTE SOURCES:
-     - https://rubygems.org/
-  - SHELL PATH:
-     - /Users/avi/.rvm/gems/ruby-2.0.0-p247/bin
-     - /Users/avi/.rvm/gems/ruby-2.0.0-p247@global/bin
-     - /Users/avi/.rvm/rubies/ruby-2.0.0-p247/bin
-```
-
-Output that looks like this is not good:
+Now, from within the directory of this file, type the `learn` command. Your terminal should have an output that looks something like this:
 
 ```
--bash: gem: command not found
-```
-
-If you see that, you need to reinstall Ruby. You can use the [Learn OSX App](https://flatironschool-static.s3.amazonaws.com/learn.dmg) to automate your setup, read a summary of the [Learn Ruby Setup](https://github.com/learn-co-curriculum/ruby-environment-setup-summary) or [Setup Your System for Learn Manually](https://github.com/learn-co-curriculum/learn-environment-setup)
-
-You should have done so already, but if you don't have RSpec on your machine, you can install it by typing `gem install rspec` into your terminal (bash, shell, command prompt - all words for the same thing). You should see something like:
-
-(The $ prompt is a general way to indicate that a command was entered into the shell. It is not literal; do not copy it.)
-
-```
-$ gem install rspec
-Successfully installed rspec-2.14.1
-1 gem installed
-```
-
-Learn is also a Ruby gem. It is built using RSpec and is essentially RSpec will some added (awesome) functionality. If you don't have Learn installed on your machine, install it with 
-
-```ruby 
-$ gem install learn-co
-```
-
-Usually, you'll run your tests by typing the `learn` command into your terminal. For the purposes of this lab, we'll run our tests by typing `rspec`. In the real world (i.e. outside of Learn.co's curriculum), you'll use `rspec` to run tests. 
-
-
-## First `rspec` Run
-
-Now, from within the directory of this file, type the `rspec` command. Your terminal should have an output that looks something like this:
-
-```ruby
-Run options: include {:focus=>true}
-
-All examples were filtered out; ignoring {:focus=>true}
-
-Randomized with seed 49309
-
 fizzbuzz
   returns "Buzz" when the number is divisible by 5 (FAILED - 1)
   returns "FizzBuzz" when the number is divisible by 3 and 5 (FAILED - 2)
@@ -332,12 +266,13 @@ rspec ./spec/fizzbuzz_spec.rb:9 # fizzbuzz returns "Buzz" when the number is div
 rspec ./spec/fizzbuzz_spec.rb:14 # fizzbuzz returns "FizzBuzz" when the number is divisible by 3 and 5
 rspec ./spec/fizzbuzz_spec.rb:19 # fizzbuzz returns nil when the number is not divisible by 3 or 5
 rspec ./spec/fizzbuzz_spec.rb:4 # fizzbuzz returns "Fizz" when the number is divisible by 3
-
 ```
 
-When we installed the RSpec gem, it gave us a new command, `rspec`. When you run the `rspec` command, you are running your test suite — not your program, remember. We haven't even written our fizzbuzz program yet. So how does that work?
+When we installed the RSpec and Learn.co gem, we got the `learn` command. When you run the `learn` command, you are running your test suite — not your program. We haven't even written our fizzbuzz program yet.
 
-Well, when you type in `rspec`, in a nutshell, here is what happens.
+So how does that work?
+
+Well, when you type in `learn`, in a nutshell, here is what happens.
 
 1. RSpec looks in a directory named `spec` for all files that end with the pattern `_spec.rb`. Why the `spec` folder and the `_spec.rb` pattern? No reason, just convention.
 2. For each of those files, it executes the Ruby code within those files.
@@ -523,6 +458,6 @@ fizzbuzz(5) # => You should see a return of nil
 fizzbuzz()  # => You should get an argument error
 ```
 
-**Helpful Tip:** You can try code in IRB and then copy it to your program files as you get it working. You can also use Pry by placing the line `require 'pry'` at the top of your `fizzbuzz.rb` and placing `binding.pry` inside the method before running RSpec. 
+**Helpful Tip:** You can try code in IRB and then copy it to your program files as you get it working. You can also use Pry by placing the line `require 'pry'` at the top of your `fizzbuzz.rb` and placing `binding.pry` inside the method before running RSpec.
 
 Good luck!
