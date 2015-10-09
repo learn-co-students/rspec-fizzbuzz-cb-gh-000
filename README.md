@@ -8,13 +8,13 @@
 
 We've been introduced to the concept of test driven development and reading and understanding RSpec tests before.
 
-Everytime you run `learn` to run a lab's tests, you are running an RSpec test suite - that's how we build labs on Learn.
+Every time you run `learn` to run a lab's tests, you are running an RSpec test suite - that's how we build labs on Learn.
 
 You've been reading these tests for a while now, but TDD is a big topic and we're going to take a closer look at it here.
 
 You're still not being asked to write your own tests. We're simply aiming to understand the purpose of tests, a bit on the philosophy behind them and a bit more on how to read RSpec tests better.
 
-Remember, when we refer to RSpec or `rspec`, that is equivelent to a Learn test file in `spec` and running the `learn` or `learn test` command.
+Remember, when we refer to RSpec or `rspec`, that is equivalent to a Learn test file in `spec` and running the `learn` or `learn test` command.
 
 You must have the `learn-co` gem installed. If you setup your environment through Learn and have used the `learn` command before (very likely if you've made it this far), you are totally fine. Run `learn` now to confirm. If you're having trouble or aren't sure, ask a question on Learn!
 
@@ -36,7 +36,7 @@ The goal of fizzbuzz is to build a program that can take a number and if the num
 
 Let's approach solving this problem from a TDD approach. That means what we don't care about is "how", but rather, we care about "what". What will the program do if it works correctly, not how will it do it. We are going to write our expectations first, then our implementation.
 
-Before we look at the RSpec syntax, let's just express our tests in plain English (also sometimes referred to as "psuedo-code").
+Before we look at the RSpec syntax, let's just express our tests in plain English (also sometimes referred to as "pseudo-code").
 
 1. We expect fizzbuzz(3) to return "Fizz"
 2. We expect fizzbuzz(5) to return "Buzz"
