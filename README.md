@@ -98,7 +98,7 @@ Resources on Blocks:
 
 - [Why's Guide to Blocks](http://mislav.uniqpath.com/poignant-guide/book/chapter-3.html)
 - [Understanding Ruby Blocks, Procs, and Lamdbas](http://www.reactive.io/tips/2008/12/21/understanding-ruby-blocks-procs-and-lambdas/)
-- [CodeAcademy on Blocks](http://www.codecademy.com/courses/ruby-beginner-en-L3ZCI/0/1?curriculum_id=5059f8619189a5000201fbcb)
+- [Codecademy on Blocks](http://www.codecademy.com/courses/ruby-beginner-en-L3ZCI/0/1?curriculum_id=5059f8619189a5000201fbcb)
 - [RubyMonk on Blocks](http://rubymonk.com/learning/books/1-ruby-primer/chapters/34-lambdas-and-blocks-in-ruby/lessons/78-blocks-in-ruby)
 
 ## `it`
