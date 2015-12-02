@@ -461,3 +461,5 @@ fizzbuzz()  # => You should get an argument error
 **Helpful Tip:** You can try code in IRB and then copy it to your program files as you get it working. You can also use Pry by placing the line `require 'pry'` at the top of your `fizzbuzz.rb` and placing `binding.pry` inside the method before running RSpec.
 
 Good luck!
+
+<a href='https://learn.co/lessons/rspec-fizzbuzz' data-visibility='hidden'>View this lesson on Learn.co</a>
