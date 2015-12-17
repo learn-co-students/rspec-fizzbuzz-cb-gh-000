@@ -80,7 +80,7 @@ Sure, that code looks crazy and it's actually quite advanced, but we don't need 
 
 The first thing RSpec allows you to do with its DSL is to define what it is you are describing. As in, are we writing a test that describes how our Billing System works or are we writing a test that describes how fizzbuzz works?
 
-RSpec gives us the `describe` method. The argument we pass to the `describe` method is arbitrary; it doesn't really do anything besides document what exactly it is we're testing. Since we're writing a specification (a test) for `fizzbuzz`, it makes sense to pass `describe` the string `"fizzbuzz"`. `describe` also accepts a block, which will be covered shortly, but for now, just know that a block in ruby starts with the `do` keyword. Every block that is opened must be closed. We use the `end` keyword to close the `describe` block.
+RSpec gives us the `describe` method. The argument we pass to the `describe` method is arbitrary; it doesn't really do anything besides document what exactly it is we're testing. Since we're writing a specification (a test) for `fizzbuzz`, it makes sense to pass `describe` the string `"fizzbuzz"`. `describe` also accepts a block, which will be covered shortly, but for now, just know that a block in Ruby starts with the `do` keyword. Every block that is opened must be closed. We use the `end` keyword to close the `describe` block.
 
 The `describe` block can be thought of as a template for a spec (a test).
 
@@ -130,7 +130,7 @@ We're simply restating the problem and our expectations in the RSpec DSL. Now le
 
 ## `expect`, `to` and `eq`
 
-Okay, let's refocus. Our goal is to test that when we call the `fizzbuzz` method, which we haven't even built yet, but in theory, when we call it, assuming it works correctly, when we call it and pass it the number 3, we expect it to equal "Fizz".
+Okay, let's refocus. Our goal is to test that when we call the `fizzbuzz` method (which we are yet to build) and pass it the number 3, we expect it to equal "Fizz" if our code works correctly.
 
 Outside of the context of our test suite, we could write an expression like:
 
