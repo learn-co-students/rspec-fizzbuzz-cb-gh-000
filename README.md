@@ -46,7 +46,7 @@ Furthermore, we could also provide a negative case.
 
 4. We expect fizzbuzz(4) to return nil or nothing or ""
 
-We don't care how that fizzbuzz method works, or even that it's defined, *we are just stating our expectations*. And we're doing that first. When coding, it's important to have a target to shoot for; by writing your test first and stating your expectations of your code, you know your goal. You get to use your entire brain to think about just your goals, not how you'll get there, which adds clarity and focus to the problem.
+We don't care how that fizzbuzz method works, nor how it's defined, *we are just stating our expectations*. And we're doing that first. When coding, it's important to have a target to shoot for; by writing your test first and stating your expectations of your code, you know your goal. You get to use your entire brain to think about just your goals, not how you'll get there, which adds clarity and focus to the problem.
 
 > The competent programmer is fully aware of the strictly limited size of his own skull; therefore he approaches the programming task in full humility.
 >
