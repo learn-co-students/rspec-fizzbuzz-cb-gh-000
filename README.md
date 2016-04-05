@@ -282,11 +282,11 @@ Within the spec directory there are 2 files, `spec_helper.rb`, which does not ma
 
 If you look at `spec/fizzbuzz_spec.rb`, there's only 1 line of it that we haven't covered: the first — `require_relative './spec_helper.rb'`. All this line does is tell Ruby to load the contents of the neighboring file, specified by the starting `.`, meaning the current directory, and the file name: `spec_helper.rb`. If you look within `spec_helper.rb` you'll see that it's basically configuring how RSpec should run and at this point is totally unimportant. One thing to note, though, is: if we need to have our actual test file load any other file, that `require_relative` line becomes even more interesting.
 
-Again, the `learn` command wraps RSpec and you will see the same output with `rspec` or `learn`, we recommend using `learn`.
+Again, the `learn` command wraps RSpec and provides some default options (namely, `--format documentation` — this controls how your test results print) and you will see approximately the same output with `rspec` or `learn`, we recommend using `learn`.
 
 ## Reading RSpec Output
 
-Let's look at the output RSpec gave us and dig into it a bit.
+Let's look at the output RSpec gave us (just run `rspec` to see the output below) and dig into it a bit.
 
 ### Test Run Summary
 
