@@ -461,6 +461,4 @@ fizzbuzz()  # => You should get an argument error
 
 Good luck!
 
-<p data-visibility='hidden'>View <a href='https://learn.co/lessons/rspec-fizzbuzz' title='Objectives'>Objectives</a> on Learn.co and start learning to code for free.</p>
-
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/rspec-fizzbuzz'>RSpec Fizzbuzz</a> on Learn.co and start learning to code for free.</p>
