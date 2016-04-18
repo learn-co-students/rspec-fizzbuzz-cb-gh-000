@@ -97,7 +97,6 @@ A block is a simple unit of code that starts with the `do` keyword and ends with
 Resources on Blocks:
 
 - [Why's Guide to Blocks](http://mislav.uniqpath.com/poignant-guide/book/chapter-3.html)
-- [Understanding Ruby Blocks, Procs, and Lamdbas](http://www.reactive.io/tips/2008/12/21/understanding-ruby-blocks-procs-and-lambdas/)
 - [Codecademy on Blocks](http://www.codecademy.com/courses/ruby-beginner-en-L3ZCI/0/1?curriculum_id=5059f8619189a5000201fbcb)
 - [RubyMonk on Blocks](http://rubymonk.com/learning/books/1-ruby-primer/chapters/34-lambdas-and-blocks-in-ruby/lessons/78-blocks-in-ruby)
 
@@ -463,3 +462,5 @@ fizzbuzz()  # => You should get an argument error
 Good luck!
 
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/rspec-fizzbuzz' title='Objectives'>Objectives</a> on Learn.co and start learning to code for free.</p>
+
+<p data-visibility='hidden'>View <a href='https://learn.co/lessons/rspec-fizzbuzz'>RSpec Fizzbuzz</a> on Learn.co and start learning to code for free.</p>
