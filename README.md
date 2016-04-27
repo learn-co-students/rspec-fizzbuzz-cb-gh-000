@@ -8,15 +8,15 @@
 
 We've been introduced to the concept of test driven development and reading and understanding RSpec tests before.
 
-Everytime you run `learn` to run a lab's tests, you are running an RSpec test suite - that's how we build labs on Learn.
+Every time you run `learn` to run a lab's tests, you are running an RSpec test suite - that's how we build labs on Learn.
 
 You've been reading these tests for a while now, but TDD is a big topic and we're going to take a closer look at it here.
 
 You're still not being asked to write your own tests. We're simply aiming to understand the purpose of tests, a bit on the philosophy behind them and a bit more on how to read RSpec tests better.
 
-Remember, when we refer to RSpec or `rspec`, that is equivelent to a Learn test file in `spec` and running the `learn` or `learn test` command.
+Remember, when we refer to RSpec or `rspec`, that is equivalent to a Learn test file in `spec` and running the `learn` or `learn test` command.
 
-You must have the `learn-co` gem installed. If you setup your environment through Learn and have used the `learn` command before (very likely if you've made it this far), you are totally fine. Run `learn` now to confirm. If you're having trouble or aren't sure, ask a question on Learn!
+You must have the `learn-co` gem installed. If you set up your environment through Learn and have used the `learn` command before (very likely if you've made it this far), you are totally fine. Run `learn` now to confirm. If you're having trouble or aren't sure, ask a question on Learn!
 
 # RSpec - Test Driven Development
 
@@ -34,9 +34,9 @@ The goal of fizzbuzz is to build a program that can take a number and if the num
 
 ## Defining Our Expectations
 
-Let's approach solving this problem from a TDD approach. That means what we don't care about is "how", but rather, we care about "what". What will the program do if it works correctly, not how will it do it. We are going to write our expectations first, then our implementation.
+Let's approach solving this problem from a TDD approach. That means what we don't care about "how", but rather, we care about "what". What should the program do if it works correctly, not how it does it. We are going to write our expectations first, then our implementation.
 
-Before we look at the RSpec syntax, let's just express our tests in plain English (also sometimes referred to as "psuedo-code").
+Before we look at the RSpec syntax, let's just express our tests in plain English (also sometimes referred to as "pseudo-code").
 
 1. We expect fizzbuzz(3) to return "Fizz"
 2. We expect fizzbuzz(5) to return "Buzz"
@@ -46,7 +46,7 @@ Furthermore, we could also provide a negative case.
 
 4. We expect fizzbuzz(4) to return nil or nothing or ""
 
-We don't care how that fizzbuzz method works, or even that it's defined, *we are just stating our expectations*. And we're doing that first. When coding, it's important to have a target to shoot for; by writing your test first and stating your expectations of your code, you know your goal. You get to use your entire brain to think about just your goals, not how you'll get there, which adds clarity and focus to the problem.
+We don't care how that fizzbuzz method works, nor how it's defined, *we are just stating our expectations*. And we're doing that first. When coding, it's important to have a target to shoot for; by writing your test first and stating your expectations of your code, you know your goal. You get to use your entire brain to think about just your goals, not how you'll get there, which adds clarity and focus to the problem.
 
 > The competent programmer is fully aware of the strictly limited size of his own skull; therefore he approaches the programming task in full humility.
 >
@@ -80,7 +80,7 @@ Sure, that code looks crazy and it's actually quite advanced, but we don't need 
 
 The first thing RSpec allows you to do with its DSL is to define what it is you are describing. As in, are we writing a test that describes how our Billing System works or are we writing a test that describes how fizzbuzz works?
 
-RSpec gives us the `describe` method. The argument we pass to the `describe` method is arbitrary; it doesn't really do anything besides document what exactly it is we're testing. Since we're writing a specification (a test) for `fizzbuzz`, it makes sense to pass `describe` the string `"fizzbuzz"`. `describe` also accepts a block, which will be covered shortly, but for now, just know that a block in ruby starts with the `do` keyword. Every block that is opened must be closed. We use the `end` keyword to close the `describe` block.
+RSpec gives us the `describe` method. The argument we pass to the `describe` method is arbitrary; it doesn't really do anything besides document what exactly it is we're testing. Since we're writing a specification (a test) for `fizzbuzz`, it makes sense to pass `describe` the string `"fizzbuzz"`. `describe` also accepts a block, which will be covered shortly, but for now, just know that a block in Ruby starts with the `do` keyword. Every block that is opened must be closed. We use the `end` keyword to close the `describe` block.
 
 The `describe` block can be thought of as a template for a spec (a test).
 
@@ -97,8 +97,7 @@ A block is a simple unit of code that starts with the `do` keyword and ends with
 Resources on Blocks:
 
 - [Why's Guide to Blocks](http://mislav.uniqpath.com/poignant-guide/book/chapter-3.html)
-- [Understanding Ruby Blocks, Procs, and Lamdbas](http://www.reactive.io/tips/2008/12/21/understanding-ruby-blocks-procs-and-lambdas/)
-- [CodeAcademy on Blocks](http://www.codecademy.com/courses/ruby-beginner-en-L3ZCI/0/1?curriculum_id=5059f8619189a5000201fbcb)
+- [Codecademy on Blocks](http://www.codecademy.com/courses/ruby-beginner-en-L3ZCI/0/1?curriculum_id=5059f8619189a5000201fbcb)
 - [RubyMonk on Blocks](http://rubymonk.com/learning/books/1-ruby-primer/chapters/34-lambdas-and-blocks-in-ruby/lessons/78-blocks-in-ruby)
 
 ## `it`
@@ -130,7 +129,7 @@ We're simply restating the problem and our expectations in the RSpec DSL. Now le
 
 ## `expect`, `to` and `eq`
 
-Okay, let's refocus. Our goal is to test that when we call the `fizzbuzz` method, which we haven't even built yet, but in theory, when we call it, assuming it works correctly, when we call it and pass it the number 3, we expect it to equal "Fizz".
+Okay, let's refocus. Our goal is to test that when we call the `fizzbuzz` method (which we are yet to build) and pass it the number 3, we expect it to equal "Fizz" if our code works correctly.
 
 Outside of the context of our test suite, we could write an expression like:
 
@@ -280,13 +279,13 @@ Well, when you type in `learn`, in a nutshell, here is what happens.
 
 Within the spec directory there are 2 files, `spec_helper.rb`, which does not match the pattern of ending with a `_spec.rb`, and then a file called `fizzbuzz_spec.rb` which does match that pattern. So RSpec will open that file and have Ruby execute it.
 
-When looking at `spec/fizzbuzz_spec.rb`, there's only 1 line of it that we haven't covered: the first — `require_relative './spec_helper.rb'`. All this line does is tell Ruby to load the contents of the neighboring file, specified by the starting `.`, meaning the current directory, `spec_helper.rb`. If you look within `spec_helper.rb` you'll see that it's basically configuring how RSpec should run and at this point is totally unimportant. One thing to note though, is should we need to have our actual test file load any other file, that `require_relative` line becomes even more interesting.
+If you look at `spec/fizzbuzz_spec.rb`, there's only 1 line of it that we haven't covered: the first — `require_relative './spec_helper.rb'`. All this line does is tell Ruby to load the contents of the neighboring file, specified by the starting `.`, meaning the current directory, and the file name: `spec_helper.rb`. If you look within `spec_helper.rb` you'll see that it's basically configuring how RSpec should run and at this point is totally unimportant. One thing to note, though, is: if we need to have our actual test file load any other file, that `require_relative` line becomes even more interesting.
 
-Again, the `learn` command wraps RSpec and you will see the same output with `rspec` or `learn`, we recommend using `learn`.
+Again, the `learn` command wraps RSpec and provides some default options (namely, `--format documentation` — this controls how your test results print) and you will see approximately the same output with `rspec` or `learn`, we recommend using `learn`.
 
 ## Reading RSpec Output
 
-Let's look at the output RSpec gave us and dig into it a bit.
+Let's look at the output RSpec gave us (just run `rspec` to see the output below) and dig into it a bit.
 
 ### Test Run Summary
 
@@ -351,7 +350,7 @@ rspec-fizzbuz/
 
 The `spec` directory is for our tests. There's a more advanced folder structure to separate the different kinds of tests you might encounter: unit, acceptance, etc. For now, while our scripts are simple, we'll basically write one spec for each lab.
 
-We're not going to put the heart of our application in the spec folder, that doesn't make sense, we want to keep our code organized so developers can easily guess the context or part of the system a file corresponds to. It's a measure of symmetry to our code, tests go in the tests directory.
+We're not going to put the heart of our application in the spec folder, that doesn't make sense, we want to keep our code organized so developers can easily guess the context or part of the system a file corresponds to. It's a measure of symmetry to our code for tests to go in the tests directory.
 
 In a larger program, I would put my code in a `lib` directory. In this example, `fizzbuzz.rb` is in the root directory, right alongside this README.
 
@@ -424,7 +423,7 @@ Edit: `spec/fizzbuzz_spec.rb`
 
 ```ruby
 require_relative './spec_helper.rb'
-require_relative '../fizzbuzz.rb'
+require_relative './fizzbuzz.rb'
 ```
 
 Now we're telling our `fizzbuzz_spec` to load both `spec_helper.rb` and `fizzbuzz.rb`.
@@ -458,6 +457,9 @@ fizzbuzz(5) # => You should see a return of nil
 fizzbuzz()  # => You should get an argument error
 ```
 
-**Helpful Tip:** You can try code in IRB and then copy it to your program files as you get it working. You can also use Pry by placing the line `require 'pry'` at the top of your `fizzbuzz.rb` and placing `binding.pry` inside the method before running RSpec.
-
+**Helpful Tip:** You can try code in IRB and then copy it to your program files as you get it working. 
 Good luck!
+
+<p data-visibility='hidden'>View <a href='https://learn.co/lessons/rspec-fizzbuzz'>RSpec Fizzbuzz</a> on Learn.co and start learning to code for free.</p>
+
+<p class='util--hide'>View <a href='https://learn.co/lessons/rspec-fizzbuzz'>Rspec Fizzbuzz</a> on Learn.co and start learning to code for free.</p>
