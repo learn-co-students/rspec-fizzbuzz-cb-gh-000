@@ -423,7 +423,7 @@ Edit: `spec/fizzbuzz_spec.rb`
 
 ```ruby
 require_relative './spec_helper.rb'
-require_relative './fizzbuzz.rb'
+require_relative '../fizzbuzz.rb'
 ```
 
 Now we're telling our `fizzbuzz_spec` to load both `spec_helper.rb` and `fizzbuzz.rb`.
@@ -461,5 +461,3 @@ fizzbuzz()  # => You should get an argument error
 Good luck!
 
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/rspec-fizzbuzz'>RSpec Fizzbuzz</a> on Learn.co and start learning to code for free.</p>
-
-<p class='util--hide'>View <a href='https://learn.co/lessons/rspec-fizzbuzz'>Rspec Fizzbuzz</a> on Learn.co and start learning to code for free.</p>
