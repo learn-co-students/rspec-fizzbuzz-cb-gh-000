@@ -6,7 +6,7 @@
 
 # A Note on This Guide
 
-We've been introduced to the concept of test driven development and reading and understanding RSpec tests before.
+We've been introduced to the concepts of test driven development and reading and understanding RSpec tests before.
 
 Every time you run `learn` to run a lab's tests, you are running an RSpec test suite - that's how we build labs on Learn.
 
@@ -14,7 +14,7 @@ You've been reading these tests for a while now, but TDD is a big topic and we'r
 
 You're still not being asked to write your own tests. We're simply aiming to understand the purpose of tests, a bit on the philosophy behind them and a bit more on how to read RSpec tests better.
 
-Remember, when we refer to RSpec or `rspec`, that is equivalent to a Learn test file in `spec` and running the `learn` or `learn test` command.
+Remember, when we refer to RSpec or `rspec`, that is equivalent to running the `learn` or `learn test` command, which invokes the Learn test files in `spec`.
 
 You must have the `learn-co` gem installed. If you set up your environment through Learn and have used the `learn` command before (very likely if you've made it this far), you are totally fine. Run `learn` now to confirm. If you're having trouble or aren't sure, ask a question on Learn!
 
@@ -30,7 +30,7 @@ Test Driven Development, or TDD, is a method for approaching a problem not throu
 
 A classic programming problem is [FizzBuzz](http://c2.com/cgi/wiki?FizzBuzzTest). It is considered the [Stairway to Heaven](http://www.codinghorror.com/blog/2007/02/fizzbuzz-the-programmers-stairway-to-heaven.html) of programming because there are so many different ways to play it and everyone plays it.
 
-The goal of fizzbuzz is to build a program that can take a number and if the number is evenly divisible by 3, it should return "Fizz", if it's divisible by 5, it should return "Buzz", and if it's divisible by both 3 and 5, it should return "FizzBuzz".
+The goal of FizzBuzz is to build a program that can take a number and if the number is evenly divisible by 3, it should return "Fizz", if it's divisible by 5, it should return "Buzz", and if it's divisible by both 3 and 5, it should return "FizzBuzz".
 
 ## Defining Our Expectations
 
@@ -46,7 +46,7 @@ Furthermore, we could also provide a negative case.
 
 4. We expect fizzbuzz(4) to return nil or nothing or ""
 
-We don't care how that fizzbuzz method works, nor how it's defined, *we are just stating our expectations*. And we're doing that first. When coding, it's important to have a target to shoot for; by writing your test first and stating your expectations of your code, you know your goal. You get to use your entire brain to think about just your goals, not how you'll get there, which adds clarity and focus to the problem.
+We don't care how that `#fizzbuzz` method works, nor how it's defined, *we are just stating our expectations*. And we're doing that first. When coding, it's important to have a target to shoot for; by writing your test first and stating your expectations of your code, you know your goal. You get to use your entire brain to think about just your goals, not how you'll get there, which adds clarity and focus to the problem.
 
 > The competent programmer is fully aware of the strictly limited size of his own skull; therefore he approaches the programming task in full humility.
 >
@@ -78,9 +78,9 @@ Sure, that code looks crazy and it's actually quite advanced, but we don't need 
 
 ## `describe`
 
-The first thing RSpec allows you to do with its DSL is to define what it is you are describing. As in, are we writing a test that describes how our Billing System works or are we writing a test that describes how fizzbuzz works?
+The first thing RSpec allows you to do with its DSL is to define what it is you are describing. As in, are we writing a test that describes how our Billing System works or are we writing a test that describes how `#fizzbuzz` works?
 
-RSpec gives us the `describe` method. The argument we pass to the `describe` method is arbitrary; it doesn't really do anything besides document what exactly it is we're testing. Since we're writing a specification (a test) for `fizzbuzz`, it makes sense to pass `describe` the string `"fizzbuzz"`. `describe` also accepts a block, which will be covered shortly, but for now, just know that a block in Ruby starts with the `do` keyword. Every block that is opened must be closed. We use the `end` keyword to close the `describe` block.
+RSpec gives us the `describe` method. The argument we pass to the `describe` method is arbitrary; it doesn't really do anything besides document what exactly it is we're testing. Since we're writing a specification (a test) for `#fizzbuzz`, it makes sense to pass `describe` the string `"fizzbuzz"`. `describe` also accepts a block, which will be covered shortly, but for now, just know that a block in Ruby starts with the `do` keyword. Every block that is opened must be closed. We use the `end` keyword to close the `describe` block.
 
 The `describe` block can be thought of as a template for a spec (a test).
 
@@ -106,7 +106,7 @@ Now that we've created a structure to group our tests together using the `descri
 
 The `it` method, like the `describe` method, accepts an arbitrary string as an argument, namely, some text that says what we're currently interested in testing. Like all things in code, every `it` should be specifying one, only one, and exactly one, desired outcome or behavior.
 
-Above we said that one functionality of `fizzbuzz` is that it returns "Fizz" if the number is divisible by 3. So we can simply write that. It's totally up to you, the programmer, to decide the phrasing for your `it` specification, but a good starting point is a verb or action. `it returns` or `it prints` or `it emails` or `it validates` etc.
+Above we said that one functionality of `#fizzbuzz` is that it returns "Fizz" if the number is divisible by 3. So we can simply write that. It's totally up to you, the programmer, to decide the phrasing for your `it` specification, but a good starting point is a verb or action. `it returns` or `it prints` or `it emails` or `it validates` etc.
 
 Also like the `describe` method, the `it` method accepts a block, beginning with the `do` keyword and ending with the `end` keyword, that will encapsulate, or group, the code that will test our expectation.
 
@@ -129,7 +129,7 @@ We're simply restating the problem and our expectations in the RSpec DSL. Now le
 
 ## `expect`, `to` and `eq`
 
-Okay, let's refocus. Our goal is to test that when we call the `fizzbuzz` method (which we are yet to build) and pass it the number 3, we expect it to equal "Fizz" if our code works correctly.
+Okay, let's refocus. Our goal is to test that when we call the `#fizzbuzz` method (which we are yet to build) and pass it the number 3, we expect it to equal "Fizz" if our code works correctly.
 
 Outside of the context of our test suite, we could write an expression like:
 
@@ -156,16 +156,16 @@ x = 1 + 1
 expect(x)
 ```
 
-Since `x` is the unknown variable, we'd be testing the expectation of the value of `x`, so we pass that value to the `expect` method. I can imagine it's weird to think of the variable `x` as an unknown value worth confirming. You're thinking, "it's obviously 2!", but the truth is, you're making the assumption that Ruby has a correct notion of arithmetic. As our programs become more complex and we use more variables, it's very important to constantly validate our assumptions with expectations and testing. Let's finish the example.
+Since `x` is the unknown variable, we'd be testing the expectation of the value of `x`, so we pass that value to the `expect` method. I can imagine it's weird to think of the variable `x` as an unknown value worth confirming. You're thinking, "It's obviously 2!" But the truth is, you're making the assumption that Ruby has a correct notion of arithmetic. As our programs become more complex and we use more variables, it's very important to constantly validate our assumptions with expectations and testing. Let's finish the example.
 
-In addition to the `expect(x)` call, we need to communicate what we expect `x` to be equal to. We do this in a weird way, we chain a `to()` method to the `expect()`, so it simply looks like:
+In addition to the `expect(x)` call, we need to communicate what we expect `x` to be equal to. To accomplish this, we chain a `to()` method to the `expect()`, so it simply looks like:
 
 ```ruby
 x = 1 + 1
 expect(x).to
 ```
 
-Then finally we use what is known as a matcher, `eq`, to specify our expectation: that we expect the result of our expectation, passed to the `expect` method, to equal, `to` `eq`, 2.
+Then finally we use what is known as a matcher, `eq`, to specify our expectation: that we expect the value of `x`, passed to the `expect` method, to equal (`to eq`) 2.
 
 ```ruby
 x = 1 + 1
@@ -178,7 +178,7 @@ You won't have to write your own tests for a while, so don't worry about masteri
 
 **First, fork and clone this lab and open it on your machine. Read the remainder of this tutorial and follow along by executing certain commands and writing certain code in this lab on your computer.**
 
-So the entire FizzBuzz test looks like (this file is located in `spec/fizzbuzz_spec.rb`:
+So the entire FizzBuzz test looks like this:
 
 File: `spec/fizzbuzz_spec.rb`
 
@@ -211,7 +211,7 @@ end
 
 Remember, your goal here is not to be able to write that test suite, yet. Your goal, rather, is to understand what that test suite is describing about your code, about your solution. When I read that, I think the following things:
 
-1. I need a method called `fizzbuzz` that accepts one argument.
+1. I need a method called `#fizzbuzz` that accepts one argument.
 2. When I call that method and pass it a number divisible by 3, like the number 3 for instance, that method should return the string "Fizz".
 3. When I call that method and pass it a number divisible by 5, like the number 5 for instance, that method should return the string "Buzz".
 4. When I call that method and pass it a number divisible by 3 and 5, like the number 15 for instance, that method should return the string "FizzBuzz".
@@ -219,73 +219,77 @@ Remember, your goal here is not to be able to write that test suite, yet. Your g
 
 # How to Run an RSpec Test Suite
 
-## First `rspec` Run via `learn`
+## First `rspec` Run Via `learn`
 
 Now, from within the directory of this file, type the `learn` command. Your terminal should have an output that looks something like this:
 
 ```
 fizzbuzz
-  returns "Buzz" when the number is divisible by 5 (FAILED - 1)
-  returns "FizzBuzz" when the number is divisible by 3 and 5 (FAILED - 2)
-  returns nil when the number is not divisible by 3 or 5 (FAILED - 3)
-  returns "Fizz" when the number is divisible by 3 (FAILED - 4)
+  returns "Fizz" when the number is divisible by 3 (FAILED - 1)
+  returns "Buzz" when the number is divisible by 5 (FAILED - 2)
+  returns "FizzBuzz" when the number is divisible by 3 and 5 (FAILED - 3)
+  returns nil when the number is not divisible by 3 or 5 (FAILED - 4)
 
 Failures:
 
-  1) fizzbuzz returns "Buzz" when the number is divisible by 5
-     Failure/Error: fizz_5 = fizzbuzz(5)
-     NoMethodError:
-       undefined method `fizzbuzz' for #<RSpec::ExampleGroups::Fizzbuzz:0x007fb0645b1f00>
-     # ./spec/fizzbuzz_spec.rb:10:in `block (2 levels) in <top (required)>'
-
-  2) fizzbuzz returns "FizzBuzz" when the number is divisible by 3 and 5
-     Failure/Error: fizz_15 = fizzbuzz(15)
-     NoMethodError:
-       undefined method `fizzbuzz' for #<RSpec::ExampleGroups::Fizzbuzz:0x007fb0645b1168>
-     # ./spec/fizzbuzz_spec.rb:15:in `block (2 levels) in <top (required)>'
-
-  3) fizzbuzz returns nil when the number is not divisible by 3 or 5
-     Failure/Error: fizz_4 = fizzbuzz(4)
-     NoMethodError:
-       undefined method `fizzbuzz' for #<RSpec::ExampleGroups::Fizzbuzz:0x007fb0645b03f8>
-     # ./spec/fizzbuzz_spec.rb:20:in `block (2 levels) in <top (required)>'
-
-  4) fizzbuzz returns "Fizz" when the number is divisible by 3
+  1) fizzbuzz returns "Fizz" when the number is divisible by 3
      Failure/Error: fizz_3 = fizzbuzz(3)
+     
      NoMethodError:
-       undefined method `fizzbuzz' for #<RSpec::ExampleGroups::Fizzbuzz:0x007fb0645ab650>
+       undefined method `fizzbuzz' for #<RSpec::ExampleGroups::Fizzbuzz:0x007f994ac67600>
      # ./spec/fizzbuzz_spec.rb:5:in `block (2 levels) in <top (required)>'
 
-Finished in 0.00121 seconds (files took 0.23681 seconds to load)
+  2) fizzbuzz returns "Buzz" when the number is divisible by 5
+     Failure/Error: fizz_5 = fizzbuzz(5)
+     
+     NoMethodError:
+       undefined method `fizzbuzz' for #<RSpec::ExampleGroups::Fizzbuzz:0x007f994ac65940>
+     # ./spec/fizzbuzz_spec.rb:10:in `block (2 levels) in <top (required)>'
+
+  3) fizzbuzz returns "FizzBuzz" when the number is divisible by 3 and 5
+     Failure/Error: fizz_15 = fizzbuzz(15)
+     
+     NoMethodError:
+       undefined method `fizzbuzz' for #<RSpec::ExampleGroups::Fizzbuzz:0x007f994ac64310>
+     # ./spec/fizzbuzz_spec.rb:15:in `block (2 levels) in <top (required)>'
+
+  4) fizzbuzz returns nil when the number is not divisible by 3 or 5
+     Failure/Error: fizz_4 = fizzbuzz(4)
+     
+     NoMethodError:
+       undefined method `fizzbuzz' for #<RSpec::ExampleGroups::Fizzbuzz:0x007f994ac5ed20>
+     # ./spec/fizzbuzz_spec.rb:20:in `block (2 levels) in <top (required)>'
+
+Finished in 0.00236 seconds (files took 0.39876 seconds to load)
 4 examples, 4 failures
 
 Failed examples:
 
+rspec ./spec/fizzbuzz_spec.rb:4 # fizzbuzz returns "Fizz" when the number is divisible by 3
 rspec ./spec/fizzbuzz_spec.rb:9 # fizzbuzz returns "Buzz" when the number is divisible by 5
 rspec ./spec/fizzbuzz_spec.rb:14 # fizzbuzz returns "FizzBuzz" when the number is divisible by 3 and 5
 rspec ./spec/fizzbuzz_spec.rb:19 # fizzbuzz returns nil when the number is not divisible by 3 or 5
-rspec ./spec/fizzbuzz_spec.rb:4 # fizzbuzz returns "Fizz" when the number is divisible by 3
 ```
 
-When we installed the RSpec and Learn.co gem, we got the `learn` command. When you run the `learn` command, you are running your test suite — not your program. We haven't even written our fizzbuzz program yet.
+When we installed the RSpec and Learn.co gems, we got the `learn` command. When you type `learn` and press enter, you are running your test suite — not your program. We haven't even written our FizzBuzz program yet.
 
 So how does that work?
 
-Well, when you type in `learn`, in a nutshell, here is what happens.
+When we run the `learn` command, in a nutshell, here is what happens:
 
 1. RSpec looks in a directory named `spec` for all files that end with the pattern `_spec.rb`. Why the `spec` folder and the `_spec.rb` pattern? No reason, just convention.
-2. For each of those files, it executes the Ruby code within those files.
+2. RSpec then executes the Ruby code within each `_spec.rb` file.
 3. During that execution, RSpec pays attention to the results of each test and prints out a nice summary of what happened (which is the output above that we're going to dissect in a minute).
 
-Within the spec directory there are 2 files, `spec_helper.rb`, which does not match the pattern of ending with a `_spec.rb`, and then a file called `fizzbuzz_spec.rb` which does match that pattern. So RSpec will open that file and have Ruby execute it.
+In the `spec` directory for this lab, there are 2 files, `spec_helper.rb`, which does not match the pattern of ending with a `_spec.rb`, and `fizzbuzz_spec.rb`, which does. So RSpec will open the second file and have Ruby execute it.
 
-If you look at `spec/fizzbuzz_spec.rb`, there's only 1 line of it that we haven't covered: the first — `require_relative './spec_helper.rb'`. All this line does is tell Ruby to load the contents of the neighboring file, specified by the starting `.`, meaning the current directory, and the file name: `spec_helper.rb`. If you look within `spec_helper.rb` you'll see that it's basically configuring how RSpec should run and at this point is totally unimportant. One thing to note, though, is: if we need to have our actual test file load any other file, that `require_relative` line becomes even more interesting.
+If you look at `spec/fizzbuzz_spec.rb`, there's only 1 line of it that we haven't covered: `require_relative './spec_helper.rb'`. All this line does is tell Ruby to load the contents of the neighboring file, specified by the starting `.` (meaning the current directory), and the file name: `spec_helper.rb`. If you look within `spec_helper.rb`, you'll see that it's basically configuring how RSpec should run and at this point is totally unimportant. One thing to note, though, is if we need to have our actual test file load any other file, that `require_relative` line becomes even more interesting.
 
-Again, the `learn` command wraps RSpec and provides some default options (namely, `--format documentation` — this controls how your test results print) and you will see approximately the same output with `rspec` or `learn`, we recommend using `learn`.
+Again, the `learn` command wraps RSpec and provides some default options (namely, `--format documentation`, which controls how your test results print), and, though you will see approximately the same output with `rspec` or `learn`, we recommend using `learn`.
 
 ## Reading RSpec Output
 
-Let's look at the output RSpec gave us (just run `rspec` to see the output below) and dig into it a bit.
+Let's look at the output RSpec gives us (just run `rspec` again), and dig into it a bit.
 
 ### Test Run Summary
 
@@ -297,13 +301,13 @@ All examples were filtered out; ignoring {:focus=>true}
 FFFF
 ```
 
-The first two lines of output are descriptive, RSpec is simply telling us what we did.
+The first two lines of output are descriptive; RSpec is simply telling us what it did.
 
-The line with `FFFF` is important. `F` stands for a failure. As the test suite runs, RSpec will spit out an `F` for every failed expectation (every `it` block). RSpec will spit out a `.` for every passing test. Right now, the entire test suite is failing, which makes sense. We haven't written any code! That's an important point, and I think [Steve Klabnik](http://www.steveklabnik.com/) said it best:
+The line with `FFFF` is important. Each `F` stands for a failure. As the test suite runs, RSpec will spit out an `F` for every failed expectation (every `it` block). RSpec will spit out a `.` for every passing test. Right now, the entire test suite is failing, which makes sense. We haven't written any code! That's an important point, and I think [Steve Klabnik](http://www.steveklabnik.com/) said it best:
 
 > *Programming is a movement from a broken state to a working state. That means you spend the majority of your time with things being broken. Hell, if it worked, you'd be done programming.*
 
-If you're new to programming, you're probably used to things working. So when they are broken, it's scary. In programming, you have to feel the exact opposite way. It is totally normal for everything to be broken. As you code, you fix things, one by one, and then when it all works, you're done for the day.
+If you're new to programming, you're probably used to things working. So when they are broken, it's scary. In programming, you have to feel the exact opposite way. It is totally normal for everything to be broken. As you code, you fix things, one by one, and then, when it all works, you're done for the day.
 
 ### Reading a Specific Example Failure
 
@@ -316,6 +320,7 @@ Failures:
 
   1) fizzbuzz returns "Fizz" when the number is divisible by 3
      Failure/Error: fizz_3 = fizzbuzz(3)
+     
      NoMethodError:
        undefined method `fizzbuzz' for #<RSpec::Core::ExampleGroup::Nested_1:0x007fbdd2230428>
      # ./spec/fizzbuzz_spec.rb:5:in `block (2 levels) in <top (required)>'
@@ -329,43 +334,50 @@ NoMethodError:
      # ./spec/fizzbuzz_spec.rb:5:in `block (2 levels) in <top (required)>'
 ```
 
-We have a `NoMethodError`. There is no method `fizzbuzz`, and the line that is important is line 5 of `/spec/fizzbuzz_spec.rb`. The rest of it is just RSpec noise (the thing about `RSpec::Core::ExampleGroup::Nested_1` is pretty meta and not worth going into here).
+We have a `NoMethodError`. There is no method `#fizzbuzz`, and the line that is important is line 5 of `/spec/fizzbuzz_spec.rb`. The rest of it is just RSpec noise (the thing about `RSpec::Core::ExampleGroup::Nested_1` is pretty meta and not worth going into here).
 
-So, why did our test fail? Because we did not define a `fizzbuzz` method.
+So, why did our test fail? Because we did not define a `#fizzbuzz` method.
 
 # Solving FizzBuzz
 
-It is finally time to actually program a solution to fizzbuzz. The first question to answer is where do we put our solution, the actual code we care about, the program we're writing. Let's look at our current directory structure.
+It is finally time to actually program a solution to FizzBuzz. The first question to answer is where to put our solution, the actual code we care about, the program we're writing. Let's look at our current directory structure:
 
 ```
-rspec-fizzbuz/
+rspec-fizzbuzz-v-000/
+    .bundle/
+      config
     spec/
         fizzbuzz_spec.rb
         spec_helper.rb
     .learn
     .rspec
+    CONTRIBUTING.md
     fizzbuzz.rb
+    Gemfile
+    Gemfile.lock
+    LICENSE.md
     README.md  
 ```
 
-The `spec` directory is for our tests. There's a more advanced folder structure to separate the different kinds of tests you might encounter: unit, acceptance, etc. For now, while our scripts are simple, we'll basically write one spec for each lab.
+The `spec` directory is for our tests. There's a more advanced folder structure to separate the different kinds of tests you might encounter: unit, acceptance, etc. For now, while our scripts are simple, we'll typically have one `_spec.rb` test for each lab.
 
-We're not going to put the heart of our application in the spec folder, that doesn't make sense, we want to keep our code organized so developers can easily guess the context or part of the system a file corresponds to. It's a measure of symmetry to our code for tests to go in the tests directory.
+We're not going to put the heart of our application in the `spec` folder — that wouldn't make sense. We want to keep our code organized so developers can easily guess the context or part of the system a file corresponds to. It's a measure of symmetry to our code for tests to go in the `spec` directory.
 
-In a larger program, I would put my code in a `lib` directory. In this example, `fizzbuzz.rb` is in the root directory, right alongside this README.
+In a larger program, I would put my code in a `lib` directory. In this example, `fizzbuzz.rb` is in the root directory, right alongside this `README.md`.
 
-`fizzbuzz.rb` is where we're going to code the core of our program––a simple method, `fizzbuzz` that when evoked in the tests above, will behave as we specified. For now though, let's just fix our first error.
+`fizzbuzz.rb` is where we're going to code the core of our program: a simple method, `#fizzbuzz`, that, when invoked by the tests above, will behave as we specified. For now though, let's just fix the first `rspec` failure.
 
-The error we were dealing with is that there is no method known as `fizzbuzz`. Let's simply define that method.
+The first failure is that there is no method known as `#fizzbuzz`. Let's simply define that method.
 
 File: `fizzbuzz.rb`
 
 ```ruby
 def fizzbuzz
+
 end
 ```
 
-Now, when we run our spec suite, we could expect to see a new sort of error. After all, we finally started solving fizzbuzz by at least defining a method to solve fizzbuzz.
+Now, when we run `rspec`, we should expect to see a new sort of error.
 
 ## A Bit About Your Test Vs Your Program
 
@@ -374,50 +386,47 @@ Run: `rspec`
 ```
   1) fizzbuzz returns "Fizz" when the number is divisible by 3
      Failure/Error: fizz_3 = fizzbuzz(3)
+     
      NoMethodError:
        undefined method `fizzbuzz' for #<RSpec::Core::ExampleGroup::Nested_1:0x007fd2f21083b8>
      # ./spec/fizzbuzz_spec.rb:5:in `block (2 levels) in <top (required)>'
 ```
 
-Don't panic! It's the same exact error, our old friend, `NoMethodError`, as though we never defined `fizzbuzz`. But look, after all this, we finally did some work and created the `fizzbuzz.rb` with a clearly defined `fizzbuzz` method and our tests are still complaining that we didn't define that method. Why?
+Don't panic! It's the same exact failure, our old friend `NoMethodError`, as though we never defined `#fizzbuzz`. But look, after all this, we finally did some work and added a clearly defined `#fizzbuzz` method to `fizzbuzz.rb`. So why is the test still complaining?
 
-Let's try this, let's load a Ruby environment from within our project directory and just play with the `fizzbuzz` method ourselves for a second.
+Let's try loading a Ruby environment from within our project directory and playing with the `#fizzbuzz` method ourselves for a second.
 
-From within `rspec-fizzbuzz` fire up `irb`, the Interactive Ruby Shell, a REPL, or real time ruby prompt for executing arbitrary ruby. For instance (remember $ means that command, `irb` was entered into your bash prompt:
-
-```
-$ irb
-2.0.0-p247 :001 > 1+1
- => 2
-2.0.0-p247 :002 >
-```
-
-From within your new IRB shell, try calling the `fizzbuzz` method that's defined in `fizzbuzz.rb`:
+From within `rspec-fizzbuzz-v-000`, fire up `irb`, the Interactive Ruby Shell, a real-time Ruby prompt for executing arbitrary code. For instance:
 
 ```
-2.0.0-p247 :001 > fizzbuzz
+// ♥ irb
+2.2.3 :001 > 1+1
+ => 2 
+```
+
+From within your new IRB shell, try calling the `#fizzbuzz` method that's defined in `fizzbuzz.rb`:
+
+```
+// ♥ irb
+2.2.3 :001 > fizzbuzz
 NameError: undefined local variable or method `fizzbuzz' for main:Object
-  from (irb):1
-  from /Users/avi/.rvm/rubies/ruby-2.0.0-p247/bin/irb:16:in `<main>'
+	from (irb):1
+	from /Users/avi/.rvm/rubies/ruby-2.2.3/bin/irb:11:in `<main>'
 ```
 
-There's our error. We tried calling `fizzbuzz` and IRB complains that it doesn't know what we're talking about. Why? Well, when did we tell IRB to actually load the contents of our `fizzbuzz.rb`? We didn't. And no where in our test runtime did we tell our tests to actually load the contents, to read, to require, `fizzbuzz.rb`. Try this in IRB
+There's our error. We tried calling `#fizzbuzz` and IRB complains that it doesn't know what we're talking about. Why? Well, when did we tell IRB to actually load the contents of `fizzbuzz.rb`? We didn't. Similarly, nowhere in our test runtime did we tell RSpec to actually load the contents of, read, or require `fizzbuzz.rb`. Try this in IRB:
 
 ```
-2.0.0-p247 :001 > fizzbuzz
-NameError: undefined local variable or method `fizzbuzz' for main:Object
-  from (irb):1
-  from /Users/avi/.rvm/rubies/ruby-2.0.0-p247/bin/irb:16:in `<main>'
-
-2.0.0-p247 :001 > require './fizzbuzz.rb'
-=> true
-2.0.0-p247 :001 > fizzbuzz
-=> nil
+// ♥ irb
+2.2.3 :001 > require './fizzbuzz.rb'
+ => true 
+2.2.3 :002 > fizzbuzz
+ => nil 
 ```
 
-As you can see, by requiring the `fizzbuzz.rb` file, we were able to call the `fizzbuzz` method.
+As you can see, by requiring the `fizzbuzz.rb` file, we were able to call the `#fizzbuzz` method.
 
-Let's add that requirement, the loading of our actual program, to our test, so that when our tests run, they can rely on our program.
+Let's add that requirement to our RSpec test suite, so that our tests know to load the code they're supposed to be testing.
 
 Edit: `spec/fizzbuzz_spec.rb`
 
@@ -426,24 +435,25 @@ require_relative './spec_helper.rb'
 require_relative '../fizzbuzz.rb'
 ```
 
-Now we're telling our `fizzbuzz_spec` to load both `spec_helper.rb` and `fizzbuzz.rb`.
+Now we're telling `fizzbuzz_spec.rb` to load both `spec_helper.rb` and `fizzbuzz.rb`.
 
-Run the test suite one more time with `rspec`, you should see failures in line with:
+Run the test suite one more time with `rspec`. You should see failures in line with the following:
 
 ```
-  1) fizzbuzz returns nil when the number is not divisible by 3 or 5
-     Failure/Error: fizz_4 = fizzbuzz(4)
+  1) fizzbuzz returns "Fizz" when the number is divisible by 3
+     Failure/Error: fizz_3 = fizzbuzz(3)
+     
      ArgumentError:
        wrong number of arguments (1 for 0)
      # ./fizzbuzz.rb:1:in `fizzbuzz'
-     # ./spec/fizzbuzz_spec.rb:21:in `block (2 levels) in <top (required)>'
+     # ./spec/fizzbuzz_spec.rb:6:in `block (2 levels) in <top (required)>'
 ```
 
-Read that error message; it's brand new! Getting a new error message is a sign of progress. It's one more hint the computer is giving you, one more clue to drive your investigation forward. Now it's complaining that our tests are calling the `fizzbuzz` method with an argument; however, our definition of `fizzbuzz` accepts no arguments. You'll fix that, but it's important to realize our test suite is now all wired up and we can continue building out our `fizzbuzz` method and running our specs against that code until we have it working.
+Read that error message; it's brand new! Getting a new error message is a sign of progress. It's one more hint the computer is giving you, one more clue to drive your investigation forward. Now it's complaining that our tests are calling the `#fizzbuzz` method with an argument; however, our definition of `#fizzbuzz` accepts no arguments. You'll fix that next, but it's important to realize our test suite is now wired up correctly. We can continue building out our `#fizzbuzz` method and running our specs against that code until we have it working.
 
 ## Continuing to Solve Fizzbuzz
 
-That's the end of the tutorial part of this lab. You have enough about RSpec and Ruby to continue solving this in a test driven manner. As you define your `fizzbuzz` method, remember, you can always play with it in IRB. For instance, load an IRB terminal and try (line by line):
+That's the end of the tutorial part of this lab. You know enough about RSpec and Ruby to continue solving this in a test-driven manner. As you define your `#fizzbuzz` method, remember that you can always play with it in IRB. For instance, load an IRB terminal and try (line by line):
 
 ```ruby
 def fizzbuzz(int)
@@ -454,10 +464,11 @@ end
 
 fizzbuzz(3) # => You should see a return of "Fizz"
 fizzbuzz(5) # => You should see a return of nil
-fizzbuzz()  # => You should get an argument error
+fizzbuzz()  # => You should get an ArgumentError
 ```
 
-**Helpful Tip:** You can try code in IRB and then copy it to your program files as you get it working. 
+**Helpful Tip:** You can try out code in IRB and then copy it to your program files as you get it working. You can also use Pry, an IRB alternative, by placing the line `require 'pry'` at the top of `fizzbuzz.rb` and placing `binding.pry` inside the method before running RSpec.
+
 Good luck!
 
-<p data-visibility='hidden'>View <a href='https://learn.co/lessons/rspec-fizzbuzz'>RSpec Fizzbuzz</a> on Learn.co and start learning to code for free.</p>
+<p data-visibility='hidden'>View <a href='https://learn.co/lessons/rspec-fizzbuzz' title='RSpec Fizzbuzz'>RSpec Fizzbuzz</a> on Learn.co and start learning to code for free.</p>
