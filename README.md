@@ -219,7 +219,7 @@ Remember, your goal here is not to be able to write that test suite, yet. Your g
 
 # How to Run an RSpec Test Suite
 
-## First `rspec` Run Via `learn`
+## First run `rspec` via `learn`
 
 Now, from within the directory of this file, type the `learn` command. Your terminal should have an output that looks something like this:
 
@@ -289,7 +289,7 @@ Again, the `learn` command wraps RSpec and provides some default options (namely
 
 ## Reading RSpec Output
 
-Let's look at the output RSpec gives us (just run `rspec` again), and dig into it a bit.
+Let's look at the output RSpec gives us (just run `learn` again), and dig into it a bit.
 
 ### Test Run Summary
 
@@ -377,11 +377,11 @@ def fizzbuzz
 end
 ```
 
-Now, when we run `rspec`, we should expect to see a new sort of error.
+Now, when we run `learn`, we should expect to see a new sort of error.
 
 ## A Bit About Your Test Vs Your Program
 
-Run: `rspec`
+Run: `learn`
 
 ```
   1) fizzbuzz returns "Fizz" when the number is divisible by 3
@@ -437,7 +437,7 @@ require_relative '../fizzbuzz.rb'
 
 Now we're telling `fizzbuzz_spec.rb` to load both `spec_helper.rb` and `fizzbuzz.rb`.
 
-Run the test suite one more time with `rspec`. You should see failures in line with the following:
+Run the test suite one more time with `learn`. You should see failures in line with the following:
 
 ```
   1) fizzbuzz returns "Fizz" when the number is divisible by 3
