@@ -102,7 +102,7 @@ Resources on Blocks:
 
 ## `it`
 
-Now that we've created a structure to group our tests together using the `describe` method, we can move onto actually describing the desired functionality. Every specification in RSpec begins with the `it` method.
+Now that we've created a structure to group our tests together using the `describe` method, we can move on to actually describing the desired functionality. Every specification in RSpec begins with the `it` method.
 
 The `it` method, like the `describe` method, accepts an arbitrary string as an argument, namely, some text that says what we're currently interested in testing. Like all things in code, every `it` should be specifying one, only one, and exactly one, desired outcome or behavior.
 
@@ -472,3 +472,5 @@ fizzbuzz()  # => You should get an ArgumentError
 Good luck!
 
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/rspec-fizzbuzz' title='RSpec Fizzbuzz'>RSpec Fizzbuzz</a> on Learn.co and start learning to code for free.</p>
+
+<p class='util--hide'>View <a href='https://learn.co/lessons/rspec-fizzbuzz'>RSpec Fizzbuzz</a> on Learn.co and start learning to code for free.</p>
