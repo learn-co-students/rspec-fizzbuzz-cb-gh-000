@@ -281,7 +281,7 @@ When we run the `learn` command, in a nutshell, here is what happens:
 2. RSpec then executes the Ruby code within each `_spec.rb` file.
 3. During that execution, RSpec pays attention to the results of each test and prints out a nice summary of what happened (which is the output above that we're going to dissect in a minute).
 
-In the `spec` directory for this lab, there are 2 files, `spec_helper.rb`, which does not match the pattern of ending with a `_spec.rb`, and `fizzbuzz_spec.rb`, which does. So RSpec will open the second file and have Ruby execute it.
+In the spec directory for this lab, there are 2 files: `spec_helper.rb`, which does not match the pattern of ending with a `_spec.rb`, and `fizzbuzz_spec.rb`, which does. So RSpec will open the second file and have Ruby execute it.
 
 If you look at `spec/fizzbuzz_spec.rb`, there's only 1 line of it that we haven't covered: `require_relative './spec_helper.rb'`. All this line does is tell Ruby to load the contents of the neighboring file, specified by the starting `.` (meaning the current directory), and the file name: `spec_helper.rb`. If you look within `spec_helper.rb`, you'll see that it's basically configuring how RSpec should run and at this point is totally unimportant. One thing to note, though, is if we need to have our actual test file load any other file, that `require_relative` line becomes even more interesting.
 
