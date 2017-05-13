@@ -234,28 +234,28 @@ Failures:
 
   1) fizzbuzz returns "Fizz" when the number is divisible by 3
      Failure/Error: fizz_3 = fizzbuzz(3)
-     
+
      NoMethodError:
        undefined method `fizzbuzz' for #<RSpec::ExampleGroups::Fizzbuzz:0x007f994ac67600>
      # ./spec/fizzbuzz_spec.rb:5:in `block (2 levels) in <top (required)>'
 
   2) fizzbuzz returns "Buzz" when the number is divisible by 5
      Failure/Error: fizz_5 = fizzbuzz(5)
-     
+
      NoMethodError:
        undefined method `fizzbuzz' for #<RSpec::ExampleGroups::Fizzbuzz:0x007f994ac65940>
      # ./spec/fizzbuzz_spec.rb:10:in `block (2 levels) in <top (required)>'
 
   3) fizzbuzz returns "FizzBuzz" when the number is divisible by 3 and 5
      Failure/Error: fizz_15 = fizzbuzz(15)
-     
+
      NoMethodError:
        undefined method `fizzbuzz' for #<RSpec::ExampleGroups::Fizzbuzz:0x007f994ac64310>
      # ./spec/fizzbuzz_spec.rb:15:in `block (2 levels) in <top (required)>'
 
   4) fizzbuzz returns nil when the number is not divisible by 3 or 5
      Failure/Error: fizz_4 = fizzbuzz(4)
-     
+
      NoMethodError:
        undefined method `fizzbuzz' for #<RSpec::ExampleGroups::Fizzbuzz:0x007f994ac5ed20>
      # ./spec/fizzbuzz_spec.rb:20:in `block (2 levels) in <top (required)>'
@@ -298,12 +298,19 @@ rspec
 Run options: include {:focus=>true}
 
 All examples were filtered out; ignoring {:focus=>true}
-FFFF
+
+fizzbuzz
+  returns "Fizz" when the number is divisible by 3 (FAILED - 1)
+  returns "Buzz" when the number is divisible by 5 (FAILED - 2)
+  returns "FizzBuzz" when the number is divisible by 3 and 5 (FAILED - 3)
+  returns nil when the number is not divisible by 3 or 5 (FAILED - 4)
 ```
 
 The first two lines of output are descriptive; RSpec is simply telling us what it did.
 
-The line with `FFFF` is important. Each `F` stands for a failure. As the test suite runs, RSpec will spit out an `F` for every failed expectation (every `it` block). RSpec will spit out a `.` for every passing test. Right now, the entire test suite is failing, which makes sense. We haven't written any code! That's an important point, and I think [Steve Klabnik](http://www.steveklabnik.com/) said it best:
+The lines that follow are important, each line represents a failure. As the test suite runs, RSpec will spit out red text line for every failed expectation (every `it` block). RSpec will also spit out lines with green text for every passing test.
+
+Right now, the entire test suite is failing, which makes sense. We haven't written any code! That's an important point, and I think [Steve Klabnik](http://www.steveklabnik.com/) said it best:
 
 > *Programming is a movement from a broken state to a working state. That means you spend the majority of your time with things being broken. Hell, if it worked, you'd be done programming.*
 
@@ -320,7 +327,7 @@ Failures:
 
   1) fizzbuzz returns "Fizz" when the number is divisible by 3
      Failure/Error: fizz_3 = fizzbuzz(3)
-     
+
      NoMethodError:
        undefined method `fizzbuzz' for #<RSpec::Core::ExampleGroup::Nested_1:0x007fbdd2230428>
      # ./spec/fizzbuzz_spec.rb:5:in `block (2 levels) in <top (required)>'
@@ -386,7 +393,7 @@ Run: `learn`
 ```
   1) fizzbuzz returns "Fizz" when the number is divisible by 3
      Failure/Error: fizz_3 = fizzbuzz(3)
-     
+
      NoMethodError:
        undefined method `fizzbuzz' for #<RSpec::Core::ExampleGroup::Nested_1:0x007fd2f21083b8>
      # ./spec/fizzbuzz_spec.rb:5:in `block (2 levels) in <top (required)>'
@@ -401,7 +408,7 @@ From within `rspec-fizzbuzz-v-000`, fire up `irb`, the Interactive Ruby Shell, a
 ```
 // ♥ irb
 2.2.3 :001 > 1+1
- => 2 
+ => 2
 ```
 
 From within your new IRB shell, try calling the `#fizzbuzz` method that's defined in `fizzbuzz.rb`:
@@ -419,9 +426,9 @@ There's our error. We tried calling `#fizzbuzz` and IRB complains that it doesn'
 ```
 // ♥ irb
 2.2.3 :001 > require './fizzbuzz.rb'
- => true 
+ => true
 2.2.3 :002 > fizzbuzz
- => nil 
+ => nil
 ```
 
 As you can see, by requiring the `fizzbuzz.rb` file, we were able to call the `#fizzbuzz` method.
@@ -442,7 +449,7 @@ Run the test suite one more time with `learn`. You should see failures in line w
 ```
   1) fizzbuzz returns "Fizz" when the number is divisible by 3
      Failure/Error: fizz_3 = fizzbuzz(3)
-     
+
      ArgumentError:
        wrong number of arguments (1 for 0)
      # ./fizzbuzz.rb:1:in `fizzbuzz'
@@ -472,4 +479,3 @@ fizzbuzz()  # => You should get an ArgumentError
 Good luck!
 
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/rspec-fizzbuzz' title='RSpec Fizzbuzz'>RSpec Fizzbuzz</a> on Learn.co and start learning to code for free.</p>
-
