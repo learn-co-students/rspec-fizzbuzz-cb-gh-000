@@ -1,4 +1,8 @@
 require_relative './spec_helper.rb'
+#We expect fizzbuzz(3) to return "Fizz"
+#We expect fizzbuzz(5) to return "Buzz"
+#We expect fizzbuzz(15) to return "FizzBuzz"
+#We expect fizzbuzz(4) to return nil or nothing or ""
 
 describe "fizzbuzz" do
   it 'returns "Fizz" when the number is divisible by 3' do
