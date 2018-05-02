@@ -10,7 +10,7 @@
 # error described in the README
 # require_relative "../fizzbuzz"
 RSpec.configure do |config|
-  config.run_all_when_everything_filtered = true
+  config.run_all_when_everything_filtered = false
   config.filter_run :focus
 
   # Run specs in random order to surface order dependencies. If you find an
