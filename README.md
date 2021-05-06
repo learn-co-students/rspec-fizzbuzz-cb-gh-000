@@ -403,7 +403,7 @@ Don't panic! It's the same exact failure, our old friend `NoMethodError`, as tho
 
 Let's try loading a Ruby environment from within our project directory and playing with the `#fizzbuzz` method ourselves for a second.
 
-From within `rspec-fizzbuzz-v-000`, fire up `irb`, the Interactive Ruby Shell, a real-time Ruby prompt for executing arbitrary code. For instance:
+From within the project directory (the name will start with `rspec-fizzbuzz-`, followed by a code indicating your cohort or curriculum track), fire up `irb`, the Interactive Ruby Shell, a real-time Ruby prompt for executing arbitrary code. For instance:
 
 ```
 // ♥ irb
@@ -477,5 +477,3 @@ fizzbuzz()  # => You should get an ArgumentError
 **Helpful Tip:** You can try out code in IRB and then copy it to your program files as you get it working. You can also use Pry, an IRB alternative, by placing the line `require 'pry'` at the top of `fizzbuzz.rb` and placing `binding.pry` inside the method before running RSpec.
 
 Good luck!
-
-<p data-visibility='hidden'>View <a href='https://learn.co/lessons/rspec-fizzbuzz' title='RSpec Fizzbuzz'>RSpec Fizzbuzz</a> on Learn.co and start learning to code for free.</p>
